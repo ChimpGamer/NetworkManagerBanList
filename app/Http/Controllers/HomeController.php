@@ -19,12 +19,10 @@ class HomeController extends Controller
         $players = Player::select('username', 'uuid')
             ->where('username', 'like', '%' . $username . '%')
             ->get();
-        $result = '[';
+        $result = [];
         foreach ($players as $player) {
-            $result .= '{"username":"' . $player->username . '", "icon":"https://crafatar.com/avatars/' . $player->uuid . '?size=20"}, ';
+            $result[] = array('username' => $player->username, "icon" => 'https://crafatar.com/avatars/' . $player->uuid . '?size=20');
         }
-        $result = substr_replace($result, "", -1);
-        $result = substr_replace($result, "", -1);
-        return $result . ']';
+        return $result;
     }
 }
