@@ -23,9 +23,13 @@
                 <tbody>
                 @foreach($bans as $ban)
                     <tr>
-                        <td>{{$ban->id}}</td>
+                        <td>@if ($ban->active)
+                                <i class="fas fa-check-circle fa-lg text-success"></i>
+                            @else
+                                <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
+                            @endif {{ $ban->id }}</td>
                         <td><img alt="player head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> {{ $ban->getPlayerName() }}
+                                 src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> <a href="/player/{{ $ban->uuid }}">{{ $ban->getPlayerName() }}</a>
                         </td>
                         <td><img alt="punisher head" draggable="false"
                                  src="https://crafatar.com/avatars/{{$ban->punisher}}?size=20"> {{ $ban->getPunisherName() }}

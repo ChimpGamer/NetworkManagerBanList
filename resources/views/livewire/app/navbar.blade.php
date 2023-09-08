@@ -25,6 +25,55 @@
                 </li>
             </ul>
         </div>
+
+        <form id="searchbar-form" style="float: right !important;margin-left: auto;">
+            <div class="position-relative">
+                <input type="text" placeholder="&#xf002; Search Player..." id="searchbar" style="font-family: Roboto, 'FontAwesome'">
+            </div>
+        </form>
     </div>
     <!-- Container wrapper -->
 </nav>
+
+@section('script')
+    <script>
+        $('#searchbar').easyAutocomplete({
+            url: function (data) {
+                if (data.length >= 3) {
+                    return '/searchPlayer?username=' + data;
+                }
+                return null;
+            },
+            getValue: 'username',
+            requestDelay: 150,
+            template: {
+                type: "iconLeft",
+                fields: {
+                    iconSrc: "icon"
+                }
+            },
+            list: {
+                onClickEvent: function () {
+                    window.location.href = '/player/' + document.getElementById('searchbar').value;
+                },
+                match: {
+                    enabled: true
+                },
+                maxNumberOfElements: 6,
+                showAnimation: {
+                    type: "slide",
+                    time: 400
+                },
+                hideAnimation: {
+                    type: "slide",
+                    time: 400
+                }
+            }
+        });
+
+        $("#searchbar-form").submit(function (event) {
+            event.preventDefault();
+            window.location.href = '/player/' + document.getElementById('searchbar').value;
+        });
+    </script>
+@endsection

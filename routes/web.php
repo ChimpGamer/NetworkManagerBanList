@@ -4,6 +4,7 @@ use App\Http\Controllers\BansController;
 use App\Http\Controllers\KicksController;
 use App\Http\Controllers\MutesController;
 use App\Http\Controllers\WarnsController;
+use App\Http\Controllers\PlayerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,6 @@ Route::get('/bans', [BansController::class, 'index'])->name('bans');
 Route::get('/mutes', [MutesController::class, 'index'])->name('mutes');
 Route::get('/kicks', [KicksController::class, 'index'])->name('kicks');
 Route::get('/warns', [WarnsController::class, 'index'])->name('warns');
+
+Route::get('/searchPlayer', [\App\Http\Controllers\HomeController::class, 'searchPlayer'])->name('searchPlayer');
+Route::resource('player', PlayerController::class);

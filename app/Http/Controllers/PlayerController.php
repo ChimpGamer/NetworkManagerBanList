@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Player;
 use App\Models\Punishment;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
-class HomeController extends Controller
+class PlayerController extends Controller
 {
 
-    public function index() {
-        $total_punishments = Punishment::count();
-        return view('home')->with('total_punishments', $total_punishments);
+    public function show(string $id): View {
+        return view('player')->with('player', Player::findOr($id, function () use ($id) {
+            return Player::where('username', '=', $id)->firstOrFail();
+        }));
     }
 
     public function searchPlayer(Request $request) {

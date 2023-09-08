@@ -17,7 +17,53 @@ body {
     padding-bottom: 30px;
     margin: 6% auto 30px;
     color: inherit;
-    background: rgba(242, 242, 242, 0.5);
+    border-radius: .3rem;
+    /*background: rgba(242, 242, 242, 0.5);*/
+}
+
+@media (min-width: 554px) {
+    padding: 4rem 2rem;
+}
+
+#searchbar {
+    display: inline-block;
+    vertical-align: middle;
+    width: 99%;
+    font-weight: 100 !important;
+}
+
+/* SearchBar Mobile Fix*/
+@media only screen and (max-device-width: 480px) {
+    #searchbar {
+        width: 85%;
+        font-weight: 100 !important;
+        padding: 11px 23px 1px 11px;
+    }
+
+    input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-input-placeholder {
+        outline: none;
+        color: var(--mdb-body-color) !important;
+        transition: all .25s ease;
+        margin: -10% auto 0;
+    }
+}
+
+input#searchbar {
+    color: var(--mdb-body-color) !important;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+input#searchbar::-webkit-input-placeholder {
+    color: lightgray;
+    transition: all .25s ease;
+    font-size: 18px;
+}
+
+input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-input-placeholder {
+    outline: none;
+    color: var(--mdb-body-color) !important;
+    transition: all .25s ease;
 }
 
 .material-icons {

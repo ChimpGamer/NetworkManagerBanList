@@ -96,6 +96,18 @@ class Player extends Model
         return Attribute::make(get: fn(int $value) => TimeUtils::millisToReadableFormat($value));
     }
 
+    protected function firstlogin(): Attribute {
+        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . " on " . TimeUtils::formatTimestamp($value));
+    }
+
+    protected function lastlogin(): Attribute {
+        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . " on " . TimeUtils::formatTimestamp($value));
+    }
+
+    protected function lastlogout(): Attribute {
+        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . " on " . TimeUtils::formatTimestamp($value));
+    }
+
     public static function getName($uuid)
     {
         if ($uuid == 'f78a4d8d-d51b-4b39-98a3-230f2de0c670') return 'CONSOLE';
