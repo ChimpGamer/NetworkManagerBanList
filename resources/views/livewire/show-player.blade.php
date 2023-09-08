@@ -4,37 +4,37 @@
             <img draggable="false" src="https://crafatar.com/avatars/{{ $player->uuid }}?overlay&size=30"> {{ $player->username }}
         </div>
         <div class="card-body table-responsive">
-            <h4>Information</h4>
+            <h4>@lang('messages.player_information')</h4>
             <hr>
             <table class="table table-sm table-borderless">
                 <tbody>
                 <tr>
-                    <th scope="row"><i class="fa fa-calendar-days"></i> Joined</th>
+                    <th scope="row">@lang('messages.player_joined')</th>
                     <td class="text-end">{{$player->firstlogin}}</td>
                 </tr>
                 <tr>
-                    <th scope="row"><i class="fa fa-clock-rotate-left"></i> Last Login</th>
+                    <th scope="row">@lang('messages.player_last_login')</th>
                     <td class="text-end">{{$player->lastlogin}}</td>
                 </tr>
                 <tr>
-                    <th scope="row"><i class="fa fa-delete-left"></i> Last Logout</th>
+                    <th scope="row">@lang('messages.player_last_logout')</th>
                     <td class="text-end">{{$player->lastlogout}}</td>
                 </tr>
                 <tr>
-                    <th scope="row"><i class="fa fa-clock"></i> Total Playtime</th>
+                    <th scope="row">@lang('messages.player_total_playtime')</th>
                     <td class="text-end">{{$player->playtime}}</td>
                 </tr>
                 <tr>
-                    <th scope="row"><i class="fa fa-screwdriver-wrench"></i> Current Minecraft Version</th>
+                    <th scope="row">@lang('messages.player_current_minecraft_version')</th>
                     <td class="text-end">{{$player->version->name()}}</td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <div class="card-footer">
-            <h4>Punishments {{ $punishmentsCount }}</h4>
+            <h4>@lang('messages.player_punishments', ['punishments' => $punishmentsCount])</h4>
             <hr>
-            <h4>Bans {{ $bans->count() }}</h4>
+            <h4>@lang('messages.player_bans', ['bans' => $bans->count()])</h4>
             @if(!empty($bans))
                 <div class="table-responsive">
                     <table class="table text-center">
@@ -79,7 +79,7 @@
                 </div>
             @endif
             <hr>
-            <h4>Mutes {{ $mutes->count() }}</h4>
+            <h4>@lang('messages.player_mutes', ['mutes' => $mutes->count()])</h4>
             @if(!empty($mutes))
                 <div class="table-responsive">
                     <table class="table text-center">
@@ -124,7 +124,7 @@
                 </div>
             @endif
             <hr>
-            <h4>Kicks {{ $kicks->count() }}</h4>
+            <h4>@lang('messages.player_kicks', ['kicks' => $kicks->count()])</h4>
             @if(!empty($kicks))
                 <div class="table-responsive">
                     <table class="table text-center">
@@ -161,7 +161,7 @@
                 </div>
             @endif
             <hr>
-            <h4>Warns {{ $warns->count() }}</h4>
+            <h4>@lang('messages.player_warns', ['warns' => $warns->count()])</h4>
             @if(!empty($warns))
                 <div class="table-responsive">
                     <table class="table text-center">

@@ -27,9 +27,7 @@
 
     <div class="jumbotron bg-body bg-opacity-50">
         <div class="text-center">
-            <h1>Welcome to the NetworkManager Ban List.</h1>
-            <h5>This site contains a list of all punishments by NetworkManager.</h5>
-            <h5>Total Punishments: {{$total_punishments}}</h5>
+            @lang('messages.homepage_text', ['total_punishments' => $total_punishments])
         </div>
     </div>
 @endsection

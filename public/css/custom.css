@@ -29,14 +29,12 @@ body {
     display: inline-block;
     vertical-align: middle;
     width: 99%;
-    font-weight: 100 !important;
 }
 
 /* SearchBar Mobile Fix*/
 @media only screen and (max-device-width: 480px) {
     #searchbar {
         width: 85%;
-        font-weight: 100 !important;
         padding: 11px 23px 1px 11px;
     }
 
