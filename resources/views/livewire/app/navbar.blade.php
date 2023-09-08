@@ -1,6 +1,6 @@
 <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <!-- Container wrapper -->
-    <div class="container-fluid">
+    <div class="container">
         <!-- Brand -->
         <a class="navbar-brand">
             <img src="/images/full_logo.png" height="25" alt="NetworkManager Logo" />
