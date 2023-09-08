@@ -4,7 +4,7 @@
             Kicks
             <label for="punishmentSearch" class="float-end mx-2">
                 <input id="punishmentSearch" type="search" wire:model="search" class="form-control"
-                       placeholder="Search..." />
+                       placeholder="@lang('messages.placeholder_search')" style="font-family: Roboto, 'FontAwesome'" />
             </label>
         </div>
         <div class="card-body border-0 shadow table-responsive">

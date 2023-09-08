@@ -28,7 +28,7 @@
 
         <form id="searchbar-form" style="float: right !important;margin-left: auto;">
             <div class="position-relative">
-                <input type="text" placeholder="@lang('messages.placeholder_search')" id="searchbar" style="font-family: Roboto, 'FontAwesome'">
+                <input type="text" placeholder="@lang('messages.placeholder_search_player')" id="searchbar" style="font-family: Roboto, 'FontAwesome'">
             </div>
         </form>
     </div>

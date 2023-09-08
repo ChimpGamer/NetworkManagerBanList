@@ -47,7 +47,8 @@ return [
     'player_kicks' => 'Kicks :kicks',
     'player_warns' => 'Warns :warns',
 
-    'placeholder_search' => '&#xf002; Search player...',
+    'placeholder_search_player' => '&#xf002; Search player...',
+    'placeholder_search' => '&#xf002; Search...',
 
     'homepage_text' => '<h1>Welcome to the NetworkManager Ban List.</h1>
 <h5>This site contains a list of all punishments by NetworkManager.</h5>
