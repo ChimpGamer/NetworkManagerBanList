@@ -10,6 +10,7 @@
         {{ config('app.name') }}
     </title>
 
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
     @livewireStyles
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet"
