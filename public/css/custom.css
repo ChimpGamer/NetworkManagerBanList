@@ -1,5 +1,9 @@
 body {
-    background-color: #fbfbfb;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-attachment: fixed;
+    background-position: 50% 0;
+    background-image: url('/images/background.jpg');
 }
 
 @media (min-width: 991.98px) {
