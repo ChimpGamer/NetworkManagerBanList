@@ -43,7 +43,7 @@ return [
     'player_current_minecraft_version' => '<i class="fa fa-screwdriver-wrench"></i> Huidige minecraft versie',
 
     'player_information' => 'Informatie',
-    'player_punishments' => 'Straffen :straffen',
+    'player_punishments' => 'Straffen :punishments',
     'player_bans' => 'Bans :bans',
     'player_mutes' => 'Mutes :mutes',
     'player_kicks' => 'Kicks :kicks',
