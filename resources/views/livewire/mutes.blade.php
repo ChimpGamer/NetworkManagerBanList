@@ -29,7 +29,7 @@
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @endif {{ $mute->id }}</td>
                         <td><img alt="player head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$mute->uuid}}?size=20"> <a href="/player/{{ $mute->uuid }}">{{ $mute->getPlayerName() }}</a>
+                                 src="https://crafatar.com/avatars/{{$mute->uuid}}?size=20"> <a href="/player/{{ $mute->uuid }}">{{ $mute->username }}</a>
                         </td>
                         <td><img alt="punisher head" draggable="false"
                                  src="https://crafatar.com/avatars/{{$mute->punisher}}?size=20"> {{ $mute->getPunisherName() }}

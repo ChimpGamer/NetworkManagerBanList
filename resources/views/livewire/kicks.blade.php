@@ -28,7 +28,7 @@
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @endif {{ $kick->id }}</td>
                         <td><img alt="player head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> <a href="/player/{{ $kick->uuid }}">{{ $kick->getPlayerName() }}</a>
+                                 src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> <a href="/player/{{ $kick->uuid }}">{{ $kick->username }}</a>
                         </td>
                         <td><img alt="punisher head" draggable="false"
                                  src="https://crafatar.com/avatars/{{$kick->punisher}}?size=20"> {{ $kick->getPunisherName() }}

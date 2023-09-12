@@ -29,7 +29,7 @@
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @endif {{ $ban->id }}</td>
                         <td><img alt="player head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> <a href="/player/{{ $ban->uuid }}">{{ $ban->getPlayerName() }}</a>
+                                 src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> <a href="/player/{{ $ban->uuid }}">{{ $ban->username }}</a>
                         </td>
                         <td><img alt="punisher head" draggable="false"
                                  src="https://crafatar.com/avatars/{{$ban->punisher}}?size=20"> {{ $ban->getPunisherName() }}
