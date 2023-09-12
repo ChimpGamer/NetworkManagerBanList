@@ -197,7 +197,6 @@
                     </table>
                 </div>
             @endif
-            <hr>
         </div>
     </div>
 </div>
