@@ -58,7 +58,7 @@
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                                     @endif {{ $ban->id }}</td>
                                 <td><img alt="player head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> {{ $ban->getPlayerName() }}
+                                         src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> {{ $player->username }}
                                 </td>
                                 <td><img alt="punisher head" draggable="false"
                                          src="https://crafatar.com/avatars/{{$ban->punisher}}?size=20"> {{ $ban->getPunisherName() }}
@@ -103,7 +103,7 @@
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                                     @endif {{ $mute->id }}</td>
                                 <td><img alt="player head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$mute->uuid}}?size=20"> {{ $mute->getPlayerName() }}
+                                         src="https://crafatar.com/avatars/{{$mute->uuid}}?size=20"> {{ $player->username }}
                                 </td>
                                 <td><img alt="punisher head" draggable="false"
                                          src="https://crafatar.com/avatars/{{$mute->punisher}}?size=20"> {{ $mute->getPunisherName() }}
@@ -147,7 +147,7 @@
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                                     @endif {{ $kick->id }}</td>
                                 <td><img alt="player head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> {{ $kick->getPlayerName() }}
+                                         src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> {{ $player->username }}
                                 </td>
                                 <td><img alt="punisher head" draggable="false"
                                          src="https://crafatar.com/avatars/{{$kick->punisher}}?size=20"> {{ $kick->getPunisherName() }}
@@ -184,7 +184,7 @@
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                                     @endif {{ $warn->id }}</td>
                                 <td><img alt="player head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$warn->uuid}}?size=20"> {{ $warn->username }}
+                                         src="https://crafatar.com/avatars/{{$warn->uuid}}?size=20"> {{ $player->username }}
                                 </td>
                                 <td><img alt="punisher head" draggable="false"
                                          src="https://crafatar.com/avatars/{{$warn->punisher}}?size=20"> {{ $warn->getPunisherName() }}
