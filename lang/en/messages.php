@@ -4,7 +4,7 @@ return [
     'navbar_home' => 'Home',
     'navbar_bans' => 'Bans :total_bans',
     'navbar_mutes' => 'Mutes :total_mutes',
-    'navbar_kicks' => 'Kicks, :total_kicks',
+    'navbar_kicks' => 'Kicks :total_kicks',
     'navbar_warns' => 'Warns :total_warns',
 
     'variable_playername' => 'Playername',
