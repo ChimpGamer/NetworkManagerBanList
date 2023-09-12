@@ -4,7 +4,7 @@ return [
     'navbar_home' => 'Thuispagina',
     'navbar_bans' => 'Bans :total_bans',
     'navbar_mutes' => 'Mutes :total_mutes',
-    'navbar_kicks' => 'Kicks, :total_kicks',
+    'navbar_kicks' => 'Kicks :total_kicks',
     'navbar_warns' => 'Waarschuwingen :total_warns',
 
     'variable_playername' => 'Spelernaam',
