@@ -8,7 +8,7 @@ use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Warns extends Component
+class ShowWarns extends Component
 {
     use WithPagination;
 

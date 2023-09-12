@@ -7,7 +7,7 @@ use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Mutes extends Component
+class ShowMutes extends Component
 {
     use WithPagination;
 

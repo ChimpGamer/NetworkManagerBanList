@@ -97,15 +97,15 @@ class Player extends Model
     }
 
     protected function firstlogin(): Attribute {
-        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . " on " . TimeUtils::formatTimestamp($value));
+        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . ' ' . __('messages.variable_datetime_on') . ' ' . TimeUtils::formatTimestamp($value));
     }
 
     protected function lastlogin(): Attribute {
-        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . " on " . TimeUtils::formatTimestamp($value));
+        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . ' ' . __('messages.variable_datetime_on') . ' ' . TimeUtils::formatTimestamp($value));
     }
 
     protected function lastlogout(): Attribute {
-        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . " on " . TimeUtils::formatTimestamp($value));
+        return Attribute::make(get: fn(int $value) => Carbon::createFromTimestamp($value / 1000)->diffForHumans() . ' ' . __('messages.variable_datetime_on') . ' ' . TimeUtils::formatTimestamp($value));
     }
 
     public static function getName($uuid)

@@ -64,6 +64,15 @@ input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-in
     transition: all .25s ease;
 }
 
+/* Easy Autocomplete theme fix */
+.easy-autocomplete-container ul {
+    /*background: none repeat scroll 0 0 #424242 !important;*/
+}
+
+.easy-autocomplete-container ul li.selected {
+    /*background: none repeat scroll 0 0 #3b71ca !important;*/
+}
+
 .material-icons {
     vertical-align: middle;
     line-height: 0 !important;

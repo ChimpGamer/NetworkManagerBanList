@@ -3,7 +3,7 @@
 @section('content')
 
     <div>
-        @livewire('mutes')
+        @livewire('show-mutes')
     </div>
 
 @endsection

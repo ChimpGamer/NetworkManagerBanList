@@ -34,6 +34,8 @@ return [
     'variable_active' => 'ACTIVE',
     'variable_expired' => 'EXPIRED',
 
+    'variable_datetime_on' => 'on',
+
     'player_joined' => '<i class="fa fa-calendar-days"></i> Joined',
     'player_last_login' => '<i class="fa fa-clock-rotate-left"></i> Last login',
     'player_last_logout' => '<i class="fa fa-delete-left"></i> Last logout',

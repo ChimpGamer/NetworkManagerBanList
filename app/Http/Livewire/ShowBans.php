@@ -7,7 +7,7 @@ use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Kicks extends Component
+class ShowBans extends Component
 {
     use WithPagination;
 
@@ -21,9 +21,9 @@ class Kicks extends Component
 
     public function render(): View
     {
-        $kicks = Punishment::whereIn('type', [17, 18])
+        $bans = Punishment::whereIn('type', [1, 2, 3, 4, 5, 6, 7, 8])
             ->where('reason', 'like', '%' . $this->search . '%')
             ->orderBy('id', 'DESC')->paginate(10);
-        return view('livewire.kicks')->with('kicks', $kicks);
+        return view('livewire.bans')->with('bans', $bans);
     }
 }

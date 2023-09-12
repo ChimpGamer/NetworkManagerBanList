@@ -6,7 +6,7 @@ use App\Models\Punishment;
 use Illuminate\View\View;
 use Livewire\Component;
 
-class Navbar extends Component
+class ShowNavbar extends Component
 {
 
     private function getTotalBans(): int
