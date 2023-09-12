@@ -22,11 +22,7 @@
                 <tbody>
                 @foreach($kicks as $kick)
                     <tr>
-                        <td>@if ($kick->active)
-                                <i class="fas fa-check-circle fa-lg text-success"></i>
-                            @else
-                                <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
-                            @endif {{ $kick->id }}</td>
+                        <td>{{ $kick->id }}</td>
                         <td><img alt="player head" draggable="false"
                                  src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> <a href="/player/{{ $kick->uuid }}">{{ $kick->username }}</a>
                         </td>
