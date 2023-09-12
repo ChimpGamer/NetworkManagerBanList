@@ -40,7 +40,7 @@
 <body>
 <header>
     <div>
-        @livewire('navbar')
+        @livewire('show-navbar')
     </div>
 </header>
 
