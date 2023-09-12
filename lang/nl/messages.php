@@ -28,6 +28,7 @@ return [
 
     'variable_ip_mute' => 'IP-Mute',
 
+    'variable_expires' => 'Verloopt op',
     'variable_server' => 'Server',
     'variable_status' => 'Status',
     'variable_global' => 'Globaal',
