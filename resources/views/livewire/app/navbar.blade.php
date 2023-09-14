@@ -1,12 +1,18 @@
 <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <!-- Container wrapper -->
     <div class="container">
-        <!-- Brand -->
-        <a class="navbar-brand">
-            <img src="/images/full_logo.png" height="25" alt="NetworkManager Logo" />
-        </a>
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Brand -->
+            <a class="navbar-brand">
+                <img src="/images/full_logo.png" height="25" alt="NetworkManager Logo" />
+            </a>
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link @if(Route::currentRouteName() == 'home') active @endif" aria-current="page" href="/">@lang('messages.navbar_home')</a>
