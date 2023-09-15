@@ -141,11 +141,7 @@
                         <tbody>
                         @foreach($kicks->take(5) as $kick)
                             <tr>
-                                <td>@if ($kick->active)
-                                        <i class="fas fa-check-circle fa-lg text-success"></i>
-                                    @else
-                                        <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
-                                    @endif {{ $kick->id }}</td>
+                                <td>{{ $kick->id }}</td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> {{ $player->username }}
                                 </td>
@@ -178,11 +174,7 @@
                         <tbody>
                         @foreach($warns->take(5) as $warn)
                             <tr>
-                                <td>@if ($warn->active)
-                                        <i class="fas fa-check-circle fa-lg text-success"></i>
-                                    @else
-                                        <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
-                                    @endif {{ $warn->id }}</td>
+                                <td>{{ $warn->id }}</td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://crafatar.com/avatars/{{$warn->uuid}}?size=20"> {{ $player->username }}
                                 </td>
