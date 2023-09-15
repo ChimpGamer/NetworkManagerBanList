@@ -53,9 +53,9 @@
                         @foreach($bans->take(5) as $ban)
                             <tr>
                                 <td>@if ($ban->active)
-                                        <i class="fas fa-check-circle fa-lg text-success"></i>
-                                    @else
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
+                                    @else
+                                        <i class="fas fa-check-circle fa-lg text-success"></i>
                                     @endif {{ $ban->id }}</td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> {{ $player->username }}
@@ -98,9 +98,9 @@
                         @foreach($mutes->take(5) as $mute)
                             <tr>
                                 <td>@if ($mute->active)
-                                        <i class="fas fa-check-circle fa-lg text-success"></i>
-                                    @else
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
+                                    @else
+                                        <i class="fas fa-check-circle fa-lg text-success"></i>
                                     @endif {{ $mute->id }}</td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://crafatar.com/avatars/{{$mute->uuid}}?size=20"> {{ $player->username }}

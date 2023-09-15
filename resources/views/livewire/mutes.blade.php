@@ -24,9 +24,9 @@
                 @foreach($mutes as $mute)
                     <tr>
                         <td>@if ($mute->active)
-                                <i class="fas fa-check-circle fa-lg text-success"></i>
-                            @else
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
+                            @else
+                                <i class="fas fa-check-circle fa-lg text-success"></i>
                             @endif {{ $mute->id }}</td>
                         <td><img alt="player head" draggable="false"
                                  src="https://crafatar.com/avatars/{{$mute->uuid}}?size=20"> <a href="/player/{{ $mute->uuid }}">{{ $mute->username }}</a>
