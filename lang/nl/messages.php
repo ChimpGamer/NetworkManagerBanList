@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'navbar_home' => 'Thuispagina',
-    'navbar_bans' => 'Bans :total_bans',
-    'navbar_mutes' => 'Mutes :total_mutes',
-    'navbar_kicks' => 'Kicks :total_kicks',
-    'navbar_warns' => 'Waarschuwingen :total_warns',
+    'navbar_home' => '<i class="fa fa-house"></i> Thuispagina',
+    'navbar_bans' => '<i class="fa fa-gavel"></i> Bans :total_bans',
+    'navbar_mutes' => '<i class="fa fa-comment-slash"></i> Mutes :total_mutes',
+    'navbar_kicks' => '<i class="fa fa-eject"></i> Kicks :total_kicks',
+    'navbar_warns' => '<i class="fa fa-triangle-exclamation"></i> Waarschuwingen :total_warns',
 
     'variable_playername' => 'Spelernaam',
     'variable_punisher' => 'Stafflid',
