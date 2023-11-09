@@ -1,6 +1,6 @@
 <div>
     <div class="card">
-        <div class="card-header h4">
+        <div class="card-header h3">
             <img draggable="false" src="https://crafatar.com/avatars/{{ $player->uuid }}?overlay&size=30"> {{ $player->username }}
         </div>
         <div class="card-body table-responsive">

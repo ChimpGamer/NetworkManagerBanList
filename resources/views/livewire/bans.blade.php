@@ -1,6 +1,6 @@
 <div>
     <div class="card">
-        <div class="card-header h5">
+        <div class="card-header h3">
             Bans
             <label for="punishmentSearch" class="float-end mx-2">
                 <input id="punishmentSearch" type="search" wire:model="search" class="form-control"
