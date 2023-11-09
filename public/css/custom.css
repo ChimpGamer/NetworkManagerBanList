@@ -75,3 +75,7 @@ input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-in
     position: relative;
     top: -1px;
 }
+
+.footer-text-shadow {
+    text-shadow: 1px 1px black;
+}

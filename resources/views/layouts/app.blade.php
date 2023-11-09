@@ -51,7 +51,7 @@
     </div>
 </div>
 
-<footer class="footer mt-auto py-3 text-center text-secondary">
+<footer class="footer mt-auto py-3 text-center text-secondary footer-text-shadow">
     <div class="container">
         <strong> Copyright &copy; 2023 ChimpGamer.</strong> All rights reserved
     </div>
