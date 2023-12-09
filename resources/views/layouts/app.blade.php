@@ -56,7 +56,7 @@
 
 @livewireScripts
 <!-- MDB -->
-<script src="{{ asset('js/mdb.min.js') }}"></script>
+<script src="{{ asset('js/mdb.umd.min.js') }}"></script>
 
 @yield('script')
 </body>

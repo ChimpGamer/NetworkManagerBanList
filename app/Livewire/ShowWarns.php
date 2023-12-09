@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Models\Punishment;
 use Illuminate\Database\Eloquent\Builder;
@@ -8,7 +8,7 @@ use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ShowBans extends Component
+class ShowWarns extends Component
 {
     use WithPagination;
 
@@ -16,20 +16,16 @@ class ShowBans extends Component
 
     public string $search = '';
 
-    public function updated() {
-        $this->resetPage();
-    }
-
     public function render(): View
     {
-        $bans = Punishment::join('players', 'punishments.uuid', 'players.uuid')
+        $warns = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')
-            ->whereIn('type', [1, 2, 3, 4, 5, 6, 7, 8])
+            ->where('type', 19)
             ->where(function (Builder $query) {
                 $query->where('players.username', 'like', '%' . $this->search . '%')
                     ->orWhere('reason', 'like', '%' . $this->search . '%');
             })
             ->orderBy('id', 'DESC')->paginate(10);
-        return view('livewire.bans')->with('bans', $bans);
+        return view('livewire.warns')->with('warns', $warns);
     }
 }

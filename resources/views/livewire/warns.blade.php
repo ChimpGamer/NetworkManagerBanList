@@ -5,7 +5,7 @@
 
             <div class="float-end d-inline">
                 <div class="form-outline" data-mdb-input-init>
-                    <input type="search" id="punishmentSearch" class="form-control" wire:model="search"/>
+                    <input type="search" id="punishmentSearch" class="form-control" wire:model.live="search"/>
                     <label class="form-label" for="punishmentSearch" style="font-family: Roboto, 'FontAwesome'">@lang('messages.placeholder_search')</label>
                 </div>
             </div>
