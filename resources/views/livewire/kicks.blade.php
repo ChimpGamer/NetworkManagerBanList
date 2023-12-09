@@ -1,11 +1,14 @@
 <div>
     <div class="card">
-        <div class="card-header h3">
-            Kicks
-            <label for="punishmentSearch" class="float-end mx-2">
-                <input id="punishmentSearch" type="search" wire:model="search" class="form-control"
-                       placeholder="@lang('messages.placeholder_search')" style="font-family: Roboto, 'FontAwesome'" />
-            </label>
+        <div class="card-header">
+            <h3 class="d-inline">Kicks</h3>
+
+            <div class="float-end d-inline">
+                <div class="form-outline" data-mdb-input-init>
+                    <input type="search" id="punishmentSearch" class="form-control" wire:model="search"/>
+                    <label class="form-label" for="punishmentSearch" style="font-family: Roboto, 'FontAwesome'">@lang('messages.placeholder_search')</label>
+                </div>
+            </div>
         </div>
         <div class="card-body border-0 shadow table-responsive">
             <table class="table text-center">

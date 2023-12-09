@@ -64,10 +64,22 @@ input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-in
     transition: all .25s ease;
 }
 
-/* Easy Autocomplete dark-theme text-colo fix */
-.easy-autocomplete-container ul {
-    color:black;
+[data-mdb-theme=dark] .easy-autocomplete-container ul {
+    background: none repeat scroll 0 0 var(--mdb-body-bg) !important;
 }
+
+[data-mdb-theme=dark] .easy-autocomplete-container ul li.selected {
+    background: none repeat scroll 0 0 #383838 !important;
+}
+
+/*.easy-autocomplete-container {
+    background: none repeat scroll 0 0 var(--mdb-body-bg);
+}*/
+
+/* Easy Autocomplete dark-theme text-colo fix */
+/*.easy-autocomplete-container ul {
+    color: var(--mdb-emphasis-color);
+}*/
 
 .material-icons {
     vertical-align: middle;
@@ -78,4 +90,10 @@ input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-in
 
 .footer-text-shadow {
     text-shadow: 1px 1px black;
+}
+
+
+/* Fix weird table color when using dark theme */
+[data-mdb-theme=dark] .table {
+    --mdb-table-bg: var(--mdb-surface-bg) !important;
 }

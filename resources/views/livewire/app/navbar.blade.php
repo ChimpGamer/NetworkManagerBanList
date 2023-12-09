@@ -2,15 +2,14 @@
     <!-- Container wrapper -->
     <div class="container">
         <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <!-- Brand -->
             <a class="navbar-brand">
-                <img src="/images/full_logo.png" height="25" alt="NetworkManager Logo" />
+                <img src="/images/full_logo.png" height="25" alt="NetworkManager Logo" loading="lazy" />
             </a>
 
             <ul class="navbar-nav">

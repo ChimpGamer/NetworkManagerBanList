@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-mdb-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -13,19 +13,16 @@
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
     @livewireStyles
     <!-- Google Fonts Roboto -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- Google Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
 
-    <link href="{{ asset('css/mdb.dark.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/mdb.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/labels.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
-
-    <script src="{{ asset('js/mdb.min.js') }}" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
@@ -58,6 +55,8 @@
 </footer>
 
 @livewireScripts
+<!-- MDB -->
+<script src="{{ asset('js/mdb.min.js') }}"></script>
 
 @yield('script')
 </body>
