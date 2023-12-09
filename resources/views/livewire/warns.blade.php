@@ -30,7 +30,7 @@
 
                 <tbody>
                 @foreach($warns as $warn)
-                    <tr>
+                    <tr wire:loading.class="opacity-50">
                         <td>@if ($warn->active)
                                 <i class="fas fa-check-circle fa-lg text-success"></i>
                             @else

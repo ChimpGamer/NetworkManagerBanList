@@ -24,7 +24,7 @@
 
                 <tbody>
                 @foreach($kicks as $kick)
-                    <tr>
+                    <tr wire:loading.class="opacity-50">
                         <td>{{ $kick->id }}</td>
                         <td><img alt="player head" draggable="false"
                                  src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> <a href="/player/{{ $kick->uuid }}">{{ $kick->username }}</a>

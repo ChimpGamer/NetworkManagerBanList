@@ -25,7 +25,7 @@
 
                 <tbody>
                 @foreach($mutes as $mute)
-                    <tr>
+                    <tr wire:loading.class="opacity-50">
                         <td>@if ($mute->active)
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @else

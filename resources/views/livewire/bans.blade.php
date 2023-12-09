@@ -25,7 +25,7 @@
 
                 <tbody>
                 @foreach($bans as $ban)
-                    <tr>
+                    <tr wire:loading.class="opacity-50">
                         <td>@if ($ban->active)
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @else
