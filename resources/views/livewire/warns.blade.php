@@ -5,7 +5,7 @@
 
             <div class="d-inline">
                 <label for="punishmentSearch" class="float-end mx-2">
-                    <input id="punishmentSearch" type="search" wire:model.live="search" class="form-control"
+                    <input id="punishmentSearch" type="search" wire:model.live.debounce.250ms="search" class="form-control"
                            placeholder="@lang('messages.placeholder_search')" style="font-family: Roboto, 'FontAwesome'" />
                 </label>
             </div>
