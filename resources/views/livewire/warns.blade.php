@@ -3,18 +3,12 @@
         <div class="card-header">
             <h3 class="d-inline">Warns</h3>
 
-            <div class="d-inline">
-                <label for="punishmentSearch" class="float-end mx-2">
-                    <input id="punishmentSearch" type="search" wire:model.live.debounce.250ms="search" class="form-control"
-                           placeholder="@lang('messages.placeholder_search')" style="font-family: Roboto, 'FontAwesome'" />
-                </label>
-            </div>
-            {{--<div class="float-end d-inline">
+            <div class="float-end d-inline" wire:ignore>
                 <div class="form-outline" data-mdb-input-init>
-                    <input type="search" id="punishmentSearch" class="form-control"/>
+                    <input type="search" id="punishmentSearch" class="form-control" wire:model.live="search"/>
                     <label class="form-label" for="punishmentSearch" style="font-family: Roboto, 'FontAwesome'">@lang('messages.placeholder_search')</label>
                 </div>
-            </div>--}}
+            </div>
         </div>
         <div class="card-body border-0 shadow table-responsive">
             <table class="table text-center">
