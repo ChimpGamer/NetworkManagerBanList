@@ -62,3 +62,15 @@ server {
     }
 }
 ```
+
+## Updating
+
+Usually just running `git pull` in the directory of the bans folder is sufficient. But sometimes there can be breaking changes which will require you do to a bit more than that.
+```shell
+composer update
+php artisan optimize:clear
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+After that it should be running just fine again.
