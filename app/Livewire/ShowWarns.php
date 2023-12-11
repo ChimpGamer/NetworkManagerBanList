@@ -15,6 +15,7 @@ class ShowWarns extends Component
     protected string $paginationTheme = 'bootstrap';
 
     public string $search = '';
+    public int $per_page = 10;
 
     public function render(): View
     {
@@ -25,7 +26,7 @@ class ShowWarns extends Component
                 $query->where('players.username', 'like', '%' . $this->search . '%')
                     ->orWhere('reason', 'like', '%' . $this->search . '%');
             })
-            ->orderBy('id', 'DESC')->paginate(10);
+            ->orderBy('id', 'DESC')->paginate($this->per_page);
         return view('livewire.warns')->with('warns', $warns);
     }
 }

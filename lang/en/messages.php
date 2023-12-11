@@ -7,6 +7,11 @@ return [
     'navbar_kicks' => '<i class="fa fa-eject"></i> Kicks :total_kicks',
     'navbar_warns' => '<i class="fa fa-triangle-exclamation"></i> Warns :total_warns',
 
+    'title_bans' => 'Bans',
+    'title_mutes' => 'Mutes',
+    'title_kicks' => 'Kicks',
+    'title_warns' => 'Warns',
+
     'variable_playername' => 'Playername',
     'variable_punisher' => 'Punisher',
     'variable_reason' => 'Reason',
@@ -55,5 +60,7 @@ return [
 
     'homepage_text' => '<h1>Welcome to the NetworkManager Ban List.</h1>
 <h5>This site contains a list of all punishments by NetworkManager.</h5>
-            <h5>Total Punishments: <strong>:total_punishments</strong></h5>'
+            <h5>Total Punishments: <strong>:total_punishments</strong></h5>',
+
+    'length_menu' => 'Show :menu entries'
 ];

@@ -7,6 +7,11 @@ return [
     'navbar_kicks' => '<i class="fa fa-eject"></i> Kicks :total_kicks',
     'navbar_warns' => '<i class="fa fa-triangle-exclamation"></i> Waarschuwingen :total_warns',
 
+    'title_bans' => 'Bans',
+    'title_mutes' => 'Mutes',
+    'title_kicks' => 'Kicks',
+    'title_warns' => 'Waarschuwingen',
+
     'variable_playername' => 'Spelernaam',
     'variable_punisher' => 'Stafflid',
     'variable_reason' => 'Reden',
@@ -55,5 +60,7 @@ return [
 
     'homepage_text' => '<h1>Welkom op de NetworkManager Ban Lijst.</h1>
 <h5>Deze site bevat alle straffen gemaakt met NetworkManager.</h5>
-            <h5>Totaal aantal straffen: <strong>:total_punishments</strong></h5>'
+            <h5>Totaal aantal straffen: <strong>:total_punishments</strong></h5>',
+
+    'length_menu' => ':menu resultaten weergeven'
 ];

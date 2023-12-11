@@ -1,8 +1,17 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <h3 class="d-inline">Kicks</h3>
+            <h2 class="text-center">@lang('messages.title_kicks')</h2>
 
+            <div class="d-inline">
+                <label>@lang('messages.length_menu', ['menu' => '<select class="form-select" style="display: inherit; width: auto" wire:model.live="per_page">
+                        <option value=10>10</option>
+                        <option value=25>25</option>
+                        <option value=50>50</option>
+                        <option value=100>100</option>
+                   </select>'])
+                </label>
+            </div>
             <div class="float-end d-inline" wire:ignore>
                 <div class="form-outline" data-mdb-input-init>
                     <input type="search" id="punishmentSearch" class="form-control" wire:model.live="search"/>
