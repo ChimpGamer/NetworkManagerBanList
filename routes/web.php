@@ -23,6 +23,7 @@ Route::get('/bans', [BansController::class, 'index'])->name('bans');
 Route::get('/mutes', [MutesController::class, 'index'])->name('mutes');
 Route::get('/kicks', [KicksController::class, 'index'])->name('kicks');
 Route::get('/warns', [WarnsController::class, 'index'])->name('warns');
+Route::view('/404', '404')->name('404');
 
 Route::get('/searchPlayer', [\App\Http\Controllers\HomeController::class, 'searchPlayer'])->name('searchPlayer');
 Route::resource('player', PlayerController::class);
