@@ -35,6 +35,11 @@
 </head>
 
 <body>
+<!-- Back to top button -->
+<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <header>
     <div>
         @livewire('show-navbar')
@@ -57,6 +62,9 @@
 @livewireScripts
 <!-- MDB -->
 <script src="{{ asset('js/mdb.umd.min.js') }}"></script>
+
+<!-- Custom -->
+<script src="{{ asset('js/custom.js') }}"></script>
 
 @yield('script')
 </body>
