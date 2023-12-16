@@ -1,7 +1,7 @@
 <div>
     <div class="card">
         <div class="card-header h3">
-            <img draggable="false" src="https://crafatar.com/avatars/{{ $player->uuid }}?overlay&size=30" alt="Player Skin Head"> {{ $player->username }}
+            <img draggable="false" src="https://minotar.net/helm/{{ $player->uuid }}/30" alt="Player Skin Head"> {{ $player->username }}
         </div>
         <div class="card-body table-responsive">
             <h4>@lang('messages.player_information')</h4>
@@ -58,10 +58,10 @@
                                         <i class="fas fa-check-circle fa-lg text-success"></i>
                                     @endif {{ $ban->id }}</td>
                                 <td><img alt="player head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> {{ $player->username }}
+                                         src="https://minotar.net/avatar/{{$ban->uuid}}/20"> {{ $player->username }}
                                 </td>
                                 <td><img alt="punisher head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$ban->punisher}}?size=20"> {{ $ban->getPunisherName() }}
+                                         src="https://minotar.net/avatar/{{$ban->punisher}}/20"> {{ $ban->getPunisherName() }}
                                 </td>
                                 <td>{{ $ban->time }}</td>
                                 <td>@if($ban->end == -1)
@@ -103,10 +103,10 @@
                                         <i class="fas fa-check-circle fa-lg text-success"></i>
                                     @endif {{ $mute->id }}</td>
                                 <td><img alt="player head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$mute->uuid}}?size=20"> {{ $player->username }}
+                                         src="https://minotar.net/avatar/{{$mute->uuid}}/20"> {{ $player->username }}
                                 </td>
                                 <td><img alt="punisher head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$mute->punisher}}?size=20"> {{ $mute->getPunisherName() }}
+                                         src="https://minotar.net/avatar/{{$mute->punisher}}/20"> {{ $mute->getPunisherName() }}
                                 </td>
                                 <td>{{ $mute->time }}</td>
                                 <td>@if($mute->end == -1)
@@ -143,10 +143,10 @@
                             <tr>
                                 <td>{{ $kick->id }}</td>
                                 <td><img alt="player head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> {{ $player->username }}
+                                         src="https://minotar.net/avatar/{{$kick->uuid}}/20"> {{ $player->username }}
                                 </td>
                                 <td><img alt="punisher head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$kick->punisher}}?size=20"> {{ $kick->getPunisherName() }}
+                                         src="https://minotar.net/avatar/{{$kick->punisher}}/20"> {{ $kick->getPunisherName() }}
                                 </td>
                                 <td>{{ $kick->time }}</td>
                                 <td>{{ $kick->reason }}</td>
@@ -176,10 +176,10 @@
                             <tr>
                                 <td>{{ $warn->id }}</td>
                                 <td><img alt="player head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$warn->uuid}}?size=20"> {{ $player->username }}
+                                         src="https://minotar.net/avatar/{{$warn->uuid}}/20"> {{ $player->username }}
                                 </td>
                                 <td><img alt="punisher head" draggable="false"
-                                         src="https://crafatar.com/avatars/{{$warn->punisher}}?size=20"> {{ $warn->getPunisherName() }}
+                                         src="https://minotar.net/avatar/{{$warn->punisher}}/20"> {{ $warn->getPunisherName() }}
                                 </td>
                                 <td>{{ $warn->time }}</td>
                                 <td>{{ $warn->reason }}</td>

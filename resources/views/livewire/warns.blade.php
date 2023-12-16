@@ -40,10 +40,10 @@
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @endif {{ $warn->id }}</td>
                         <td><img alt="player head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$warn->uuid}}?size=20"> <a href="/player/{{ $warn->uuid }}">{{ $warn->username }}</a>
+                                 src="https://minotar.net/avatar/{{$warn->uuid}}/20"> <a href="/player/{{ $warn->uuid }}">{{ $warn->username }}</a>
                         </td>
                         <td><img alt="punisher head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$warn->punisher}}?size=20"> {{ $warn->getPunisherName() }}
+                                 src="https://minotar.net/avatar/{{$warn->punisher}}/20"> {{ $warn->getPunisherName() }}
                         </td>
                         <td>{{ $warn->time }}</td>
                         <td>{{ $warn->reason }}</td>

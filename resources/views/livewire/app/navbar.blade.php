@@ -45,7 +45,7 @@
         $('#searchbar').easyAutocomplete({
             url: function (data) {
                 if (data.length >= 3) {
-                    return '/searchPlayer?username=' + data;
+                    return '/player/search/' + data;
                 }
                 return null;
             },

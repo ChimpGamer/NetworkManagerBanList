@@ -36,10 +36,10 @@
                     <tr wire:loading.class="opacity-50">
                         <td>{{ $kick->id }}</td>
                         <td><img alt="player head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$kick->uuid}}?size=20"> <a href="/player/{{ $kick->uuid }}">{{ $kick->username }}</a>
+                                 src="https://minotar.net/avatar/{{$kick->uuid}}/20"> <a href="/player/{{ $kick->uuid }}">{{ $kick->username }}</a>
                         </td>
                         <td><img alt="punisher head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$kick->punisher}}?size=20"> {{ $kick->getPunisherName() }}
+                                 src="https://minotar.net/avatar/{{$kick->punisher}}/20"> {{ $kick->getPunisherName() }}
                         </td>
                         <td>{{ $kick->time }}</td>
                         <td>{{ $kick->reason }}</td>

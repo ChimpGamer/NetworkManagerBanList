@@ -16,14 +16,13 @@ class PlayerController extends Controller
         }));
     }
 
-    public function searchPlayer(Request $request) {
-        $username = $request->input('username');
+    public function search(string $username) {
         $players = Player::select('username', 'uuid')
             ->where('username', 'like', '%' . $username . '%')
             ->get();
         $result = '[';
         foreach ($players as $player) {
-            $result .= '{"username":"' . $player->username . '", "icon":"https://crafatar.com/avatars/' . $player->uuid . '?size=20"}, ';
+            $result .= '{"username":"' . $player->username . '", "icon":"https://minotar.net/avatar/' . $player->uuid . '/20"}, ';
         }
         $result = substr_replace($result, "", -1);
         $result = substr_replace($result, "", -1);

@@ -41,10 +41,10 @@
                                 <i class="fas fa-check-circle fa-lg text-success"></i>
                             @endif {{ $ban->id }}</td>
                         <td><img alt="player head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$ban->uuid}}?size=20"> <a href="/player/{{ $ban->uuid }}">{{ $ban->username }}</a>
+                                 src="https://minotar.net/avatar/{{$ban->uuid}}/20"> <a href="/player/{{ $ban->uuid }}">{{ $ban->username }}</a>
                         </td>
                         <td><img alt="punisher head" draggable="false"
-                                 src="https://crafatar.com/avatars/{{$ban->punisher}}?size=20"> {{ $ban->getPunisherName() }}
+                                 src="https://minotar.net/avatar/{{$ban->punisher}}/20"> {{ $ban->getPunisherName() }}
                         </td>
                         <td>{{ $ban->time }}</td>
                         <td>@if($ban->end == -1)
