@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Player;
-use App\Models\Punishment;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class PlayerController extends Controller
@@ -20,12 +18,10 @@ class PlayerController extends Controller
         $players = Player::select('username', 'uuid')
             ->where('username', 'like', '%' . $username . '%')
             ->get();
-        $result = '[';
+        $result = [];
         foreach ($players as $player) {
-            $result .= '{"username":"' . $player->username . '", "icon":"https://minotar.net/avatar/' . $player->uuid . '/20"}, ';
+            $result[] = array('username' => $player->username, 'icon' => 'https://minotar.net/avatar/' . $player->uuid . '/20');
         }
-        $result = substr_replace($result, "", -1);
-        $result = substr_replace($result, "", -1);
-        return $result . ']';
+        return $result;
     }
 }
