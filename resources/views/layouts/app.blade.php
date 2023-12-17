@@ -24,12 +24,8 @@
     <link href="{{ asset('css/labels.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
     <!-- AUTOCOMPLETE -->
     <link href='//cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.min.css' rel="stylesheet">
-    <script type="text/javascript"
-            src='//cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.min.js'></script>
 
     @stack('styles')
 </head>
@@ -60,8 +56,14 @@
 </footer>
 
 @livewireScripts
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
 <!-- MDB -->
 <script src="{{ asset('js/mdb.umd.min.js') }}"></script>
+
+<!-- AUTOCOMPLETE -->
+<script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.min.js'></script>
 
 <!-- Custom -->
 <script src="{{ asset('js/custom.js') }}"></script>
