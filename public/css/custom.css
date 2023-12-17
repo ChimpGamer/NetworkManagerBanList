@@ -71,13 +71,6 @@ input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-in
     background: none repeat scroll 0 0 #383838 !important;
 }
 
-.material-icons {
-    vertical-align: middle;
-    line-height: 0 !important;
-    position: relative;
-    top: -1px;
-}
-
 .footer-text-shadow {
     text-shadow: 1px 1px black;
 }
