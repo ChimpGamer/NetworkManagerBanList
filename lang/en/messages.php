@@ -25,8 +25,10 @@ return [
     'variable_muted_until' => 'Muted Until',
 
     'variable_kick' => 'Kick',
+    'variable_kicked_on' => 'Kicked On',
 
     'variable_warn' => 'Warn',
+    'variable_warned_on' => 'Warned On',
 
     'variable_permanent' => 'Permanent',
     'variable_ip_ban' => 'IP-Ban',

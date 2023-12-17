@@ -26,7 +26,7 @@
                     <th>@lang('messages.variable_kick')</th>
                     <th>@lang('messages.variable_playername')</th>
                     <th>@lang('messages.variable_punisher')</th>
-                    <th>@lang('messages.variable_expires')</th>
+                    <th>@lang('messages.variable_kicked_on')</th>
                     <th>@lang('messages.variable_reason')</th>
                 </tr>
                 </thead>
