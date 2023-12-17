@@ -22,7 +22,7 @@
 
 @section('content')
     <div id="logo" class="text-center p-4">
-        <img src="/images/Logo.jpg" class="img-fluid">
+        <img src="/images/Logo.jpg" class="img-fluid" alt="Logo" height="auto" width="auto">
     </div>
 
     <div class="jumbotron bg-body bg-opacity-50">
