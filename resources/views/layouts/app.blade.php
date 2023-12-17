@@ -11,7 +11,7 @@
     </title>
 
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
-    @livewireStyles
+
     <!-- Google Fonts Roboto -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
@@ -53,7 +53,6 @@
     </div>
 </footer>
 
-@livewireScripts
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
