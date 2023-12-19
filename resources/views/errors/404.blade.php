@@ -7,14 +7,13 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="mb-4">
-                        <h1 class="fw-bold display-1">404</h1>
+                        <h1 class="fw-bold display-1">@lang('messages.404_title')</h1>
                     </div>
                     <div>
-                        <p class="h2">Sorry, we can’t find the page you’re looking for.</p>
-                        <p class="lead">Click the button below to go back to the homepage.</p>
+                        @lang('messages.404_text')
                     </div>
                     <div>
-                        <a class="btn btn-primary" href="/" role="button">Click to go home</a>
+                        <a class="btn btn-primary" href="/" role="button">@lang('messages.404_button_text')</a>
                     </div>
                 </div>
             </div>

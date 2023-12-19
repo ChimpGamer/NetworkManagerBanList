@@ -64,5 +64,10 @@ return [
 <h5>Deze site bevat alle straffen gemaakt met NetworkManager.</h5>
             <h5>Totaal aantal straffen: <strong>:total_punishments</strong></h5>',
 
+    '404_title' => '404',
+    '404_text' => '<p class="h2">Sorry, we kunnen de pagina die u zoekt niet vinden.</p>
+                        <p class="lead">Klik op onderstaande knop om terug te gaan naar de startpagina.</p>',
+    '404_button_text' => 'Klik om naar de thuispagina te gaan',
+
     'length_menu' => ':menu resultaten weergeven'
 ];

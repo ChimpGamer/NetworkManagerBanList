@@ -64,5 +64,10 @@ return [
 <h5>This site contains a list of all punishments by NetworkManager.</h5>
             <h5>Total Punishments: <strong>:total_punishments</strong></h5>',
 
+    '404_title' => '404',
+    '404_text' => '<p class="h2">Sorry, we can’t find the page you’re looking for.</p>
+                        <p class="lead">Click the button below to go back to the homepage.</p>',
+    '404_button_text' => 'Click to go home',
+
     'length_menu' => 'Show :menu entries'
 ];
