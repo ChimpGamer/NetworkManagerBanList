@@ -28,7 +28,7 @@
     @stack('styles')
 </head>
 
-<body>
+<body style="background-image: url({{ config('custom.body_background_image_url', 'images/background.jpg') }});">
 <!-- Back to top button -->
 <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
     <i class="fas fa-arrow-up"></i>

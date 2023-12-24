@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <!-- Brand -->
             <a class="navbar-brand">
-                <img src="/images/full_logo.png" height="25" width="auto" alt="NetworkManager Logo" loading="lazy"/>
+                <img src="{{ config('custom.navbar_logo_url', asset('images/full_logo.png')) }}" height="25" width="auto" alt="NetworkManager Logo" loading="lazy"/>
             </a>
 
             <ul class="navbar-nav">
