@@ -35,9 +35,9 @@
                 @foreach($warns as $warn)
                     <tr wire:loading.class="opacity-50">
                         <td>@if ($warn->active)
-                                <i class="fas fa-check-circle fa-lg text-success"></i>
-                            @else
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
+                            @else
+                                <i class="fas fa-check-circle fa-lg text-success"></i>
                             @endif {{ $warn->id }}</td>
                         <td><img alt="player head" draggable="false"
                                  src="https://minotar.net/avatar/{{$warn->uuid}}/20"> <a href="/player/{{ $warn->uuid }}">{{ $warn->username }}</a>
