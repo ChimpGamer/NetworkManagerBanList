@@ -62,7 +62,7 @@ return [
 
     'homepage_text' => '<h1>Welcome to the NetworkManager Ban List.</h1>
 <h5>This site contains a list of all punishments by NetworkManager.</h5>
-            <h5>Total Punishments: <strong>:total_punishments</strong></h5>',
+            <h5>Total Punishments: <span class="badge badge-danger">:total_punishments</span></h5>',
 
     '404_title' => '404',
     '404_text' => '<p class="h2">Sorry, we can’t find the page you’re looking for.</p>

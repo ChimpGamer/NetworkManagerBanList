@@ -62,7 +62,7 @@ return [
 
     'homepage_text' => '<h1>Welkom op de NetworkManager Ban Lijst.</h1>
 <h5>Deze site bevat alle straffen gemaakt met NetworkManager.</h5>
-            <h5>Totaal aantal straffen: <strong>:total_punishments</strong></h5>',
+            <h5>Totaal aantal straffen: <span class="badge badge-danger">:total_punishments</span></h5>',
 
     '404_title' => '404',
     '404_text' => '<p class="h2">Sorry, we kunnen de pagina die u zoekt niet vinden.</p>
