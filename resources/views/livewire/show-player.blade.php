@@ -174,7 +174,11 @@
                         <tbody>
                         @foreach($warns->take(5) as $warn)
                             <tr>
-                                <td>{{ $warn->id }}</td>
+                                <td>@if ($warn->active)
+                                        <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
+                                    @else
+                                        <i class="fas fa-check-circle fa-lg text-success"></i>
+                                    @endif {{ $warn->id }}</td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://minotar.net/avatar/{{$warn->uuid}}/20"> {{ $player->username }}
                                 </td>
