@@ -2,10 +2,10 @@
 
 return [
     'navbar_home' => '<i class="fa fa-house"></i> Home',
-    'navbar_bans' => '<i class="fa fa-gavel"></i> Bans :total_bans',
-    'navbar_mutes' => '<i class="fa fa-comment-slash"></i> Mutes :total_mutes',
-    'navbar_kicks' => '<i class="fa fa-eject"></i> Kicks :total_kicks',
-    'navbar_warns' => '<i class="fa fa-triangle-exclamation"></i> Warns :total_warns',
+    'navbar_bans' => '<i class="fa fa-gavel"></i> Bans <span class="badge badge-danger">:total_bans</span>',
+    'navbar_mutes' => '<i class="fa fa-comment-slash"></i> Mutes <span class="badge badge-danger">:total_mutes</span>',
+    'navbar_kicks' => '<i class="fa fa-eject"></i> Kicks <span class="badge badge-danger">:total_kicks</span>',
+    'navbar_warns' => '<i class="fa fa-triangle-exclamation"></i> Warns <span class="badge badge-danger">:total_warns</span>',
 
     'title_bans' => 'Bans',
     'title_mutes' => 'Mutes',
