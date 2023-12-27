@@ -5,7 +5,7 @@
         </div>
         <div class="card-body table-responsive">
             <h4>@lang('messages.player_information')</h4>
-            <hr>
+            <hr class="hr">
             <table class="table table-sm table-borderless">
                 <tbody>
                 <tr>
@@ -33,7 +33,7 @@
         </div>
         <div class="card-footer">
             <h4>@lang('messages.player_punishments', ['punishments' => $punishmentsCount])</h4>
-            <hr>
+            <hr class="hr">
             <h4>@lang('messages.player_bans', ['bans' => $bans->count()])</h4>
             @if(!empty($bans))
                 <div class="table-responsive">
@@ -78,7 +78,7 @@
                     </table>
                 </div>
             @endif
-            <hr>
+            <hr class="hr">
             <h4>@lang('messages.player_mutes', ['mutes' => $mutes->count()])</h4>
             @if(!empty($mutes))
                 <div class="table-responsive">
@@ -123,7 +123,7 @@
                     </table>
                 </div>
             @endif
-            <hr>
+            <hr class="hr">
             <h4>@lang('messages.player_kicks', ['kicks' => $kicks->count()])</h4>
             @if(!empty($kicks))
                 <div class="table-responsive">
@@ -156,7 +156,7 @@
                     </table>
                 </div>
             @endif
-            <hr>
+            <hr class="hr">
             <h4>@lang('messages.player_warns', ['warns' => $warns->count()])</h4>
             @if(!empty($warns))
                 <div class="table-responsive">
