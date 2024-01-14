@@ -69,5 +69,8 @@ return [
                         <p class="lead">Klik op onderstaande knop om terug te gaan naar de startpagina.</p>',
     '404_button_text' => 'Klik om naar de thuispagina te gaan',
 
-    'length_menu' => ':menu resultaten weergeven'
+    'length_menu' => ':menu resultaten weergeven',
+
+    'tooltip_expires_in' => 'Verloopt :time',
+    'tooltip_expired' => ':time verlopen',
 ];

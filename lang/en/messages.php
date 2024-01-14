@@ -69,5 +69,8 @@ return [
                         <p class="lead">Click the button below to go back to the homepage.</p>',
     '404_button_text' => 'Click to go home',
 
-    'length_menu' => 'Show :menu entries'
+    'length_menu' => 'Show :menu entries',
+
+    'tooltip_expires_in' => 'Expires in :time',
+    'tooltip_expired' => 'Expired :time',
 ];

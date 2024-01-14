@@ -52,7 +52,7 @@
                             @elseif($ban->type->isIP())
                                 <span class="label label-danger">@lang('messages.variable_ip_ban')</span>
                             @else
-                                <span class="label label-warning">{{ $ban->getEndFormatted() }}</span>
+                                <span class="label label-warning" x-data='{ tooltip: "{{ $ban->getExpires() }}"}' x-tooltip="tooltip">{{ $ban->getEndFormatted() }}</span>
                             @endif</td>
                         <td>{{ $ban->reason }}</td>
                     </tr>

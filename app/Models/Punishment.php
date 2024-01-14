@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Helpers\TimeUtils;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -96,5 +97,15 @@ class Punishment extends Model
 
     public function getEndFormatted(): string {
         return TimeUtils::formatTimestamp($this->end);
+    }
+
+    public function getExpires(): string
+    {
+        $end = Carbon::createFromTimestampMs($this->end);
+        if ($end->isPast()) {
+            return __('messages.tooltip_expired', ['time' => $end->ago()]);
+        } else {
+            return __('messages.tooltip_expires_in', ['time' => $end->fromNow()]);
+        }
     }
 }
