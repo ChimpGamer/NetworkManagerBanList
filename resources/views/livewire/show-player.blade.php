@@ -114,7 +114,7 @@
                                     @elseif($mute->type->isIP())
                                         <span class="label label-danger">@lang('messages.variable_ip_mute')</span>
                                     @else
-                                        <span class="label label-warning">{{ $mute->getEndFormatted() }}</span>
+                                        <span class="label label-warning" x-data='{ tooltip: "{{ $ban->getExpires() }}"}' x-tooltip="tooltip">{{ $mute->getEndFormatted() }}</span>
                                     @endif</td>
                                 <td>{{ $mute->reason }}</td>
                             </tr>
