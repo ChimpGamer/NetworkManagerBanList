@@ -11,6 +11,7 @@ return [
     'title_mutes' => 'Mutes',
     'title_kicks' => 'Kicks',
     'title_warns' => 'Waarschuwingen',
+    'title_player' => 'Speler :username',
 
     'variable_playername' => 'Spelernaam',
     'variable_punisher' => 'Stafflid',

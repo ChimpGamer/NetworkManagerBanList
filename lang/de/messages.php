@@ -16,6 +16,7 @@ return [
     'title_mutes' => 'Gestummte',
     'title_kicks' => 'Gekickte',
     'title_warns' => 'Verwarnungen',
+    'title_player' => 'Spieler :username',
 
     'variable_playername' => 'Spielername',
     'variable_punisher' => 'Bestrafer',
@@ -74,5 +75,8 @@ return [
                         <p class="lead">Klicken Sie auf die Schaltfläche unten, um zur Startseite zurückzukehren.</p>',
     '404_button_text' => 'Klicken Sie hier, um zur Startseite zu gelangen',
 
-    'length_menu' => ':menu Zeilen anzeigen'
+    'length_menu' => ':menu Zeilen anzeigen',
+
+    'tooltip_expires_in' => 'Läuft in :time ab',
+    'tooltip_expired' => ':time abgelaufen',
 ];

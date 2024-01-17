@@ -1,6 +1,6 @@
 <div>
     @section('title')
-        Player {{ $player->username }}
+        @lang('messages.title_player', ['username'=> $player->username])
     @endsection
     <div class="card">
         <div class="card-header h3">
