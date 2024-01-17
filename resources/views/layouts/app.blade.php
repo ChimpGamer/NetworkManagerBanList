@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="{{ config('app.description') }}">
+
+    <meta property="og:site_name" content="{{ config('app.name') }}">
+    <meta property="og:description" content="{{ config('app.description') }}">
+    <meta property="og:type" content="webite">
+    @if(Route::currentRouteName() != null)
+        <meta property="og:title" content="{{ ucfirst(Route::currentRouteName()) }}">
+    @endif
+    @if(file_exists(public_path('images/banner.png')))
+        <meta property="og:image" content="{{ asset('images/banner.png') }}">
+    @endif
+    <meta property="og:url" content="{{ Request::url() }}">
+    <meta name="twitter:card" content="summary_large_image">
 
     <title>
         @if(Route::currentRouteName() != null)
