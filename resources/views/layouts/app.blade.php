@@ -11,7 +11,7 @@
     <meta property="og:description" content="{{ config('app.description') }}">
     <meta property="og:type" content="webite">
     @if(Route::currentRouteName() != null)
-        <meta property="og:title" content="{{ ucfirst(Route::currentRouteName()) }}">
+        <meta property="og:title" content="@yield('pagetitle', ucfirst(Route::currentRouteName()))">
     @endif
     @if(file_exists(public_path('images/banner.png')))
         <meta property="og:image" content="{{ asset('images/banner.png') }}">
@@ -21,7 +21,7 @@
 
     <title>
         @if(Route::currentRouteName() != null)
-            {{ ucfirst(Route::currentRouteName()) }} |
+            @yield('title', ucfirst(Route::currentRouteName())) |
         @endif
         {{ config('app.name') }}
     </title>

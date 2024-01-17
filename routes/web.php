@@ -25,5 +25,5 @@ Route::get('/kicks', [KicksController::class, 'index'])->name('kicks');
 Route::get('/warns', [WarnsController::class, 'index'])->name('warns');
 Route::view('/404', '404')->name('404');
 
-Route::get('/player/{id}', [PlayerController::class, 'show']);
+Route::get('/player/{id}', [PlayerController::class, 'show'])->name('player');
 Route::get('/player/search/{username}', [PlayerController::class, 'search'])->name('search');

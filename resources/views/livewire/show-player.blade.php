@@ -1,4 +1,7 @@
 <div>
+    @section('title')
+        Player {{ $player->username }}
+    @endsection
     <div class="card">
         <div class="card-header h3">
             <img draggable="false" src="https://minotar.net/helm/{{ $player->uuid }}/30" alt="Player Skin Head"> {{ $player->username }}
