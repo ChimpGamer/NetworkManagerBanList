@@ -34,7 +34,7 @@
 
                 <tbody>
                 @foreach($mutes as $mute)
-                    <tr wire:loading.class="opacity-50" wire:key="{{ $ban->id }}">
+                    <tr wire:loading.class="opacity-50" wire:key="{{ $mute->id }}">
                         <td>@if ($mute->active)
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @else
