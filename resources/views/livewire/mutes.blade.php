@@ -34,7 +34,7 @@
 
                 <tbody>
                 @foreach($mutes as $mute)
-                    <tr wire:loading.class="opacity-50">
+                    <tr wire:loading.class="opacity-50" wire:key="{{ $ban->id }}">
                         <td>@if ($mute->active)
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @else
@@ -52,7 +52,7 @@
                             @elseif($mute->type->isIP())
                                 <span class="label label-danger">@lang('messages.variable_ip_mute')</span>
                             @else
-                                <span class="label label-warning">{{ $mute->getEndFormatted() }}</span>
+                                <span class="label label-warning" x-data='{ tooltip: "{{ $ban->getExpires() }}"}' x-tooltip="tooltip">{{ $mute->getEndFormatted() }}</span>
                             @endif</td>
                         <td>{{ $mute->reason }}</td>
                     </tr>

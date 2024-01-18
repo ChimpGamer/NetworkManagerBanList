@@ -34,7 +34,7 @@
 
                 <tbody>
                 @foreach($bans as $ban)
-                    <tr wire:loading.class="opacity-50">
+                    <tr wire:loading.class="opacity-50" wire:key="{{ $ban->id }}">
                         <td>@if ($ban->active)
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @else
@@ -52,7 +52,7 @@
                             @elseif($ban->type->isIP())
                                 <span class="label label-danger">@lang('messages.variable_ip_ban')</span>
                             @else
-                                <span class="label label-warning">{{ $ban->getEndFormatted() }}</span>
+                                <span class="label label-warning" x-data='{ tooltip: "{{ $ban->getExpires() }}"}' x-tooltip="tooltip">{{ $ban->getEndFormatted() }}</span>
                             @endif</td>
                         <td>{{ $ban->reason }}</td>
                     </tr>
