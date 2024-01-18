@@ -47,7 +47,7 @@ body {
 input#searchbar {
     color: var(--mdb-body-color) !important;
     font-size: 18px;
-    border-radius: 2px;
+    border-radius: var(--mdb-border-radius);
 }
 
 input#searchbar::-webkit-input-placeholder {
