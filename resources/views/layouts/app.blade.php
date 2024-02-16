@@ -39,7 +39,7 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
 
     <!-- AUTOCOMPLETE -->
-    <link href='//cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.min.css' rel="stylesheet">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/easy-autocomplete.min.css' rel="stylesheet">
 
     <!-- Tippy -->
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
@@ -84,7 +84,7 @@
 <script src="{{ asset('js/mdb.umd.min.js') }}"></script>
 
 <!-- AUTOCOMPLETE -->
-<script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.min.js'></script>
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/easy-autocomplete/1.3.5/jquery.easy-autocomplete.min.js'></script>
 
 <!-- Alpine Tooltip -->
 <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-tooltip@1.x.x/dist/cdn.min.js" defer></script>
