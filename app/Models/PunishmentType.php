@@ -60,28 +60,59 @@ enum PunishmentType: int
         };
     }
 
+    public function isBan(): bool
+    {
+        return match ($this) {
+            PunishmentType::BAN, PunishmentType::GBAN, PunishmentType::TEMPBAN,
+            PunishmentType::GTEMPBAN, PunishmentType::IPBAN, PunishmentType::GIPBAN,
+            PunishmentType::TEMPIPBAN, PunishmentType::GTEMPIPBAN => true,
+            default => false,
+        };
+    }
+
+    public function isMute(): bool
+    {
+        return match ($this) {
+            PunishmentType::MUTE, PunishmentType::GMUTE, PunishmentType::TEMPMUTE,
+            PunishmentType::GTEMPMUTE, PunishmentType::IPMUTE, PunishmentType::GIPMUTE,
+            PunishmentType::TEMPIPMUTE, PunishmentType::GTEMPIPMUTE => true,
+            default => false,
+        };
+    }
+
+    public function isKick(): bool
+    {
+        return $this === PunishmentType::KICK || $this === PunishmentType::GKICK;
+    }
+
+    public function isWarn(): bool
+    {
+        return $this === PunishmentType::WARN;
+    }
+
     public static function getName(self $type): string
     {
+        //TODO: Make these translatable
         return match ($type) {
-            PunishmentType::BAN => 'Ban',
-            PunishmentType::GBAN => 'Global Ban',
-            PunishmentType::TEMPBAN => 'Temporary Ban',
-            PunishmentType::GTEMPBAN => 'Global Temporary Ban',
-            PunishmentType::IPBAN => 'IP Ban',
-            PunishmentType::GIPBAN => 'Global IP Ban',
-            PunishmentType::TEMPIPBAN => 'Temporary IP Ban',
-            PunishmentType::GTEMPIPBAN => 'Global Temporary IP Ban',
-            PunishmentType::MUTE => 'Mute',
-            PunishmentType::GMUTE => 'Global Mute',
-            PunishmentType::TEMPMUTE => 'Temporary Mute',
-            PunishmentType::GTEMPMUTE => 'Global Temporary Mute',
-            PunishmentType::IPMUTE => 'IP Mute',
-            PunishmentType::GIPMUTE => 'Global IP Mute',
-            PunishmentType::TEMPIPMUTE => 'Temporary IP Mute',
-            PunishmentType::GTEMPIPMUTE => 'Global Temporary IP Mute',
-            PunishmentType::KICK => 'Kick',
-            PunishmentType::GKICK => 'Global Kick',
-            PunishmentType::WARN => 'Warn',
+            PunishmentType::BAN => __('messages.punishment_types.ban'),
+            PunishmentType::GBAN => __('messages.punishment_types.global_ban'),
+            PunishmentType::TEMPBAN => __('messages.punishment_types.temp_ban'),
+            PunishmentType::GTEMPBAN => __('messages.punishment_types.global_temp_ban'),
+            PunishmentType::IPBAN => __('messages.punishment_types.ip_ban'),
+            PunishmentType::GIPBAN => __('messages.punishment_types.global_ip_ban'),
+            PunishmentType::TEMPIPBAN => __('messages.punishment_types.temp_ip_ban'),
+            PunishmentType::GTEMPIPBAN => __('messages.punishment_types.global_temp_ip_ban'),
+            PunishmentType::MUTE => __('messages.punishment_types.mute'),
+            PunishmentType::GMUTE => __('messages.punishment_types.global_mute'),
+            PunishmentType::TEMPMUTE => __('messages.punishment_types.temp_mute'),
+            PunishmentType::GTEMPMUTE => __('messages.punishment_types.global_temp_mute'),
+            PunishmentType::IPMUTE => __('messages.punishment_types.ip_mute'),
+            PunishmentType::GIPMUTE => __('messages.punishment_types.global_ip_mute'),
+            PunishmentType::TEMPIPMUTE => __('messages.punishment_types.temp_ip_mute'),
+            PunishmentType::GTEMPIPMUTE => __('messages.punishment_types.global_temp_ip_mute'),
+            PunishmentType::KICK => __('messages.punishment_types.kick'),
+            PunishmentType::GKICK => __('messages.punishment_types.global_kick'),
+            PunishmentType::WARN => __('messages.punishment_types.warn'),
             PunishmentType::REPORT => 'Report',
             PunishmentType::NOTE => 'Note',
             default => 'Unknown',

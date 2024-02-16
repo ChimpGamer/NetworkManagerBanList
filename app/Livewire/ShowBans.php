@@ -14,11 +14,21 @@ class ShowBans extends Component
 
     protected string $paginationTheme = 'bootstrap';
 
+    public ?Punishment $punishment = null;
+
     public string $search = '';
     public int $per_page = 10;
 
-    public function updated() {
-        $this->resetPage();
+    public function updated($fields)
+    {
+        if ($fields == 'search' || $fields == 'per_page') {
+            $this->resetPage();
+        }
+    }
+
+    public function showPunishment(Punishment $punishment)
+    {
+        $this->punishment = $punishment;
     }
 
     public function render(): View

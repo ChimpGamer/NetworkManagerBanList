@@ -1,4 +1,6 @@
 <div>
+    @include('livewire.punishment-details-modal')
+
     <div class="card">
         <div class="card-header">
             <h2 class="text-center">@lang('messages.title_bans')</h2>
@@ -23,7 +25,7 @@
             <table class="table text-center">
                 <thead>
                 <tr>
-                    <th>@lang('messages.variable_ban')</th>
+                    <th>@lang('messages.punishment_types.ban')</th>
                     <th>@lang('messages.variable_playername')</th>
                     <th>@lang('messages.variable_punisher')</th>
                     <th>@lang('messages.variable_banned_on')</th>
@@ -39,7 +41,9 @@
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                             @else
                                 <i class="fas fa-check-circle fa-lg text-success"></i>
-                            @endif {{ $ban->id }}</td>
+                            @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
+                                      data-mdb-target="#showPunishmentModal"
+                                      wire:click="showPunishment({{$ban->id}})">{{ $ban->id }}</a></td>
                         <td><img alt="player head" draggable="false"
                                  src="https://minotar.net/avatar/{{$ban->uuid}}/20"> <a href="/player/{{ $ban->uuid }}">{{ $ban->username }}</a>
                         </td>
@@ -47,12 +51,12 @@
                                  src="https://minotar.net/avatar/{{$ban->punisher}}/20"> {{ $ban->getPunisherName() }}
                         </td>
                         <td>{{ $ban->time }}</td>
-                        <td>@if($ban->end == -1)
-                                <span class="label label-danger">@lang('messages.variable_permanent')</span>
-                            @elseif($ban->type->isIP())
-                                <span class="label label-danger">@lang('messages.variable_ip_ban')</span>
-                            @else
+                        <td>@if($ban->type->isIP())
+                                <span class="label label-danger">@lang('messages.punishment_types.ip_ban')</span>
+                            @elseif($ban->type->isTemporary())
                                 <span class="label label-warning" x-data='{ tooltip: "{{ $ban->getExpires() }}"}' x-tooltip="tooltip">{{ $ban->getEndFormatted() }}</span>
+                            @else
+                                <span class="label label-danger">@lang('messages.variable_permanent')</span>
                             @endif</td>
                         <td>{{ $ban->reason }}</td>
                     </tr>

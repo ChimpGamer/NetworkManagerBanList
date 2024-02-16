@@ -17,24 +17,17 @@ return [
     'variable_punisher' => 'Punisher',
     'variable_reason' => 'Reason',
 
-    'variable_ban' => 'Ban',
     'variable_banned_on' => 'Banned On',
     'variable_banned_until' => 'Banned Until',
 
-    'variable_mute' => 'Mute',
     'variable_muted_on' => 'Muted On',
     'variable_muted_until' => 'Muted Until',
 
-    'variable_kick' => 'Kick',
     'variable_kicked_on' => 'Kicked On',
 
-    'variable_warn' => 'Warn',
     'variable_warned_on' => 'Warned On',
 
     'variable_permanent' => 'Permanent',
-    'variable_ip_ban' => 'IP-Ban',
-
-    'variable_ip_mute' => 'IP-Mute',
 
     'variable_expires' => 'Expires',
     'variable_server' => 'Server',
@@ -42,6 +35,11 @@ return [
     'variable_global' => 'Global',
     'variable_active' => 'ACTIVE',
     'variable_expired' => 'EXPIRED',
+
+    'variable_unbanned_by' => 'Unbanned By',
+    'variable_unban_reason' => 'Unban Reason',
+    'variable_unmuted_by' => 'Unmuted By',
+    'variable_unmute_reason' => 'Unmute Reason',
 
     'variable_datetime_on' => 'on',
 
@@ -74,4 +72,32 @@ return [
 
     'tooltip_expires_in' => 'Expires in :time',
     'tooltip_expired' => 'Expired :time',
+
+    'modal_close' => 'Close',
+
+    'punishment_modal_title' => ':type #:id details',
+
+    'punishment_types' => [
+        'ban' => 'Ban',
+        'global_ban' => 'Global Ban',
+        'temp_ban' => 'Temporary Ban',
+        'global_temp_ban' => 'Global Temporary Ban',
+        'ip_ban' => 'IP-Ban',
+        'global_ip_ban' => 'Global IP-Ban',
+        'temp_ip_ban' => 'Temporary IP-Ban',
+        'global_temp_ip_ban' => 'Global Temporary IP-Ban',
+
+        'mute' => 'Mute',
+        'global_mute' => 'Global Mute',
+        'temp_mute' => 'Temporary Mute',
+        'global_temp_mute' => 'Global Temporary Mute',
+        'ip_mute' => 'IP-Mute',
+        'global_ip_mute' => 'Global IP-Mute',
+        'temp_ip_mute' => 'Temporary IP-Mute',
+        'global_temp_ip_mute' => 'Global Temporary IP-Mute',
+
+        'kick' => 'Kick',
+        'global_kick' => 'Global Kick',
+        'warn' => 'Warn',
+    ],
 ];

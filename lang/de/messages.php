@@ -30,16 +30,11 @@ return [
     'variable_muted_on' => 'Stummgeschaltet Am',
     'variable_muted_until' => 'Stummgeschaltet Bis',
 
-    'variable_kick' => 'Kick',
     'variable_kicked_on' => 'Gekickt Am',
 
-    'variable_warn' => 'Verwarnung',
     'variable_warned_on' => 'Verwarnt Am',
 
     'variable_permanent' => 'Permanent',
-    'variable_ip_ban' => 'IP-Verbannungen',
-
-    'variable_ip_mute' => 'IP-Stumm',
 
     'variable_expires' => 'Läuft ab in',
     'variable_server' => 'Server',
@@ -47,6 +42,11 @@ return [
     'variable_global' => 'Global',
     'variable_active' => 'AKTIV',
     'variable_expired' => 'ABGELAUFEN',
+
+    'variable_unbanned_by' => 'Unbanned By',
+    'variable_unban_reason' => 'Unban Reason',
+    'variable_unmuted_by' => 'Unmuted By',
+    'variable_unmute_reason' => 'Unmute Reason',
 
     'variable_datetime_on' => 'am',
 
@@ -79,4 +79,32 @@ return [
 
     'tooltip_expires_in' => 'Läuft in :time ab',
     'tooltip_expired' => ':time abgelaufen',
+
+    'modal_close' => 'Schließen',
+
+    'punishment_modal_title' => ':type #:id details',
+
+    'punishment_types' => [
+        'ban' => 'Verbannungen',
+        'global_ban' => 'Global Ban',
+        'temp_ban' => 'Temporary Ban',
+        'global_temp_ban' => 'Global Temporary Ban',
+        'ip_ban' => 'IP-Ban',
+        'global_ip_ban' => 'Global IP-Ban',
+        'temp_ip_ban' => 'Temporary IP-Ban',
+        'global_temp_ip_ban' => 'Global Temporary IP-Ban',
+
+        'mute' => 'Stumm',
+        'global_mute' => 'Global Mute',
+        'temp_mute' => 'Temporary Mute',
+        'global_temp_mute' => 'Global Temporary Mute',
+        'ip_mute' => 'IP-Mute',
+        'global_ip_mute' => 'Global IP-Mute',
+        'temp_ip_mute' => 'Temporary IP-Mute',
+        'global_temp_ip_mute' => 'Global Temporary IP-Mute',
+
+        'kick' => 'Kick',
+        'global_kick' => 'Global Kick',
+        'warn' => 'Verwarnung',
+    ],
 ];

@@ -1,4 +1,6 @@
 <div>
+    @include('livewire.punishment-details-modal')
+
     @section('title')
         @lang('messages.title_player', ['username'=> $player->username])
     @endsection
@@ -43,7 +45,7 @@
                     <table class="table text-center">
                         <thead>
                         <tr>
-                            <th>@lang('messages.variable_ban')</th>
+                            <th>@lang('messages.punishment_types.ban')</th>
                             <th>@lang('messages.variable_playername')</th>
                             <th>@lang('messages.variable_punisher')</th>
                             <th>@lang('messages.variable_banned_on')</th>
@@ -59,7 +61,9 @@
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                                     @else
                                         <i class="fas fa-check-circle fa-lg text-success"></i>
-                                    @endif {{ $ban->id }}</td>
+                                    @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
+                                              data-mdb-target="#showPunishmentModal"
+                                              wire:click="showPunishment({{$ban->id}})">{{ $ban->id }}</a></td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://minotar.net/avatar/{{$ban->uuid}}/20"> {{ $player->username }}
                                 </td>
@@ -67,12 +71,12 @@
                                          src="https://minotar.net/avatar/{{$ban->punisher}}/20"> {{ $ban->getPunisherName() }}
                                 </td>
                                 <td>{{ $ban->time }}</td>
-                                <td>@if($ban->end == -1)
-                                        <span class="label label-danger">@lang('messages.variable_permanent')</span>
-                                    @elseif($ban->type->isIP())
-                                        <span class="label label-danger">@lang('messages.variable_ip_ban')</span>
-                                    @else
+                                <td>@if($ban->type->isIP())
+                                        <span class="label label-danger">@lang('messages.punishment_types.ip_ban')</span>
+                                    @elseif($ban->type->isTemporary())
                                         <span class="label label-warning" x-data='{ tooltip: "{{ $ban->getExpires() }}"}' x-tooltip="tooltip">{{ $ban->getEndFormatted() }}</span>
+                                    @else
+                                        <span class="label label-danger">@lang('messages.variable_permanent')</span>
                                     @endif</td>
                                 <td>{{ $ban->reason }}</td>
                             </tr>
@@ -88,7 +92,7 @@
                     <table class="table text-center">
                         <thead>
                         <tr>
-                            <th>@lang('messages.variable_mute')</th>
+                            <th>@lang('messages.punishment_types.mute')</th>
                             <th>@lang('messages.variable_playername')</th>
                             <th>@lang('messages.variable_punisher')</th>
                             <th>@lang('messages.variable_muted_on')</th>
@@ -104,7 +108,9 @@
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                                     @else
                                         <i class="fas fa-check-circle fa-lg text-success"></i>
-                                    @endif {{ $mute->id }}</td>
+                                    @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
+                                              data-mdb-target="#showPunishmentModal"
+                                              wire:click="showPunishment({{$mute->id}})">{{ $mute->id }}</a></td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://minotar.net/avatar/{{$mute->uuid}}/20"> {{ $player->username }}
                                 </td>
@@ -112,12 +118,12 @@
                                          src="https://minotar.net/avatar/{{$mute->punisher}}/20"> {{ $mute->getPunisherName() }}
                                 </td>
                                 <td>{{ $mute->time }}</td>
-                                <td>@if($mute->end == -1)
-                                        <span class="label label-danger">@lang('messages.variable_permanent')</span>
-                                    @elseif($mute->type->isIP())
-                                        <span class="label label-danger">@lang('messages.variable_ip_mute')</span>
-                                    @else
+                                <td>@if($mute->type->isIP())
+                                        <span class="label label-danger">@lang('messages.punishment_types.ip_mute')</span>
+                                    @elseif($mute->type->isTemporary())
                                         <span class="label label-warning" x-data='{ tooltip: "{{ $mute->getExpires() }}"}' x-tooltip="tooltip">{{ $mute->getEndFormatted() }}</span>
+                                    @else
+                                        <span class="label label-danger">@lang('messages.variable_permanent')</span>
                                     @endif</td>
                                 <td>{{ $mute->reason }}</td>
                             </tr>
@@ -133,7 +139,7 @@
                     <table class="table text-center">
                         <thead>
                         <tr>
-                            <th>@lang('messages.variable_kick')</th>
+                            <th>@lang('messages.punishment_types.kick')</th>
                             <th>@lang('messages.variable_playername')</th>
                             <th>@lang('messages.variable_punisher')</th>
                             <th>@lang('messages.variable_kicked_on')</th>
@@ -144,7 +150,9 @@
                         <tbody>
                         @foreach($kicks->take(5) as $kick)
                             <tr>
-                                <td>{{ $kick->id }}</td>
+                                <td><a href="#" data-mdb-ripple-init data-mdb-modal-init
+                                       data-mdb-target="#showPunishmentModal"
+                                       wire:click="showPunishment({{$kick->id}})">{{ $kick->id }}</a></td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://minotar.net/avatar/{{$kick->uuid}}/20"> {{ $player->username }}
                                 </td>
@@ -166,7 +174,7 @@
                     <table class="table text-center">
                         <thead>
                         <tr>
-                            <th>@lang('messages.variable_warn')</th>
+                            <th>@lang('messages.punishment_types.warn')</th>
                             <th>@lang('messages.variable_playername')</th>
                             <th>@lang('messages.variable_punisher')</th>
                             <th>@lang('messages.variable_warned_on')</th>
@@ -181,7 +189,9 @@
                                         <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
                                     @else
                                         <i class="fas fa-check-circle fa-lg text-success"></i>
-                                    @endif {{ $warn->id }}</td>
+                                    @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
+                                              data-mdb-target="#showPunishmentModal"
+                                              wire:click="showPunishment({{$warn->id}})">{{ $warn->id }}</a></td>
                                 <td><img alt="player head" draggable="false"
                                          src="https://minotar.net/avatar/{{$warn->uuid}}/20"> {{ $player->username }}
                                 </td>

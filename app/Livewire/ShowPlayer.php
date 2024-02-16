@@ -16,6 +16,13 @@ class ShowPlayer extends Component
     public $kicks;
     public $warns;
 
+    public ?Punishment $punishment = null;
+
+    public function showPunishment(Punishment $punishment)
+    {
+        $this->punishment = $punishment;
+    }
+
     public function mount() {
         $this->punishmentsCount = Punishment::where('uuid', $this->player->uuid)->count();
         $this->bans = Punishment::whereIn('type', [1, 2, 3, 4, 5, 6, 7, 8])

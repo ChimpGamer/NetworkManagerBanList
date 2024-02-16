@@ -90,6 +90,10 @@ class Punishment extends Model
         return Player::getName($this->punisher);
     }
 
+    public function getUnbannerName() {
+        return Player::getName($this->unbanner);
+    }
+
     public function getTimeFormatted(): string
     {
         return TimeUtils::formatTimestamp($this->time);

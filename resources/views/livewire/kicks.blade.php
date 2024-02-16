@@ -1,4 +1,5 @@
 <div>
+    @include('livewire.punishment-details-modal')
     <div class="card">
         <div class="card-header">
             <h2 class="text-center">@lang('messages.title_kicks')</h2>
@@ -23,7 +24,7 @@
             <table class="table text-center">
                 <thead>
                 <tr>
-                    <th>@lang('messages.variable_kick')</th>
+                    <th>@lang('messages.punishment_types.kick')</th>
                     <th>@lang('messages.variable_playername')</th>
                     <th>@lang('messages.variable_punisher')</th>
                     <th>@lang('messages.variable_kicked_on')</th>
@@ -34,7 +35,9 @@
                 <tbody>
                 @foreach($kicks as $kick)
                     <tr wire:loading.class="opacity-50">
-                        <td>{{ $kick->id }}</td>
+                        <td><a href="#" data-mdb-ripple-init data-mdb-modal-init
+                               data-mdb-target="#showPunishmentModal"
+                               wire:click="showPunishment({{$kick->id}})">{{ $kick->id }}</a></td>
                         <td><img alt="player head" draggable="false"
                                  src="https://minotar.net/avatar/{{$kick->uuid}}/20"> <a href="/player/{{ $kick->uuid }}">{{ $kick->username }}</a>
                         </td>

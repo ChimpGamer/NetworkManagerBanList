@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @author ChimpGamer
+ * @date 11-9-2023
+ */
+
 return [
     'navbar_home' => '<i class="fa fa-house"></i> Thuispagina',
     'navbar_bans' => '<i class="fa fa-gavel"></i> Bans <span class="badge badge-danger">:total_bans</span>',
@@ -17,24 +22,17 @@ return [
     'variable_punisher' => 'Stafflid',
     'variable_reason' => 'Reden',
 
-    'variable_ban' => 'Ban',
     'variable_banned_on' => 'Verbannen op',
     'variable_banned_until' => 'Verbannen tot',
 
-    'variable_mute' => 'Mute',
     'variable_muted_on' => 'Gemute op',
     'variable_muted_until' => 'Gemute tot',
 
-    'variable_kick' => 'Kick',
     'variable_kicked_on' => 'Kicked op',
 
-    'variable_warn' => 'Warn',
     'variable_warned_on' => 'Gewaarschuwd op',
 
     'variable_permanent' => 'Permanent',
-    'variable_ip_ban' => 'IP-Ban',
-
-    'variable_ip_mute' => 'IP-Mute',
 
     'variable_expires' => 'Verloopt op',
     'variable_server' => 'Server',
@@ -42,6 +40,11 @@ return [
     'variable_global' => 'Globaal',
     'variable_active' => 'ACTIEF',
     'variable_expired' => 'Verlopen',
+
+    'variable_unbanned_by' => 'Unbanned By',
+    'variable_unban_reason' => 'Unban Reason',
+    'variable_unmuted_by' => 'Unmuted By',
+    'variable_unmute_reason' => 'Unmute Reason',
 
     'variable_datetime_on' => 'op',
 
@@ -74,4 +77,32 @@ return [
 
     'tooltip_expires_in' => 'Verloopt :time',
     'tooltip_expired' => ':time verlopen',
+
+    'modal_close' => 'Sluiten',
+
+    'punishment_modal_title' => ':type #:id details',
+
+    'punishment_types' => [
+        'ban' => 'Ban',
+        'global_ban' => 'Global Ban',
+        'temp_ban' => 'Temporary Ban',
+        'global_temp_ban' => 'Global Temporary Ban',
+        'ip_ban' => 'IP-Ban',
+        'global_ip_ban' => 'Global IP-Ban',
+        'temp_ip_ban' => 'Temporary IP-Ban',
+        'global_temp_ip_ban' => 'Global Temporary IP-Ban',
+
+        'mute' => 'Mute',
+        'global_mute' => 'Global Mute',
+        'temp_mute' => 'Temporary Mute',
+        'global_temp_mute' => 'Global Temporary Mute',
+        'ip_mute' => 'IP-Mute',
+        'global_ip_mute' => 'Global IP-Mute',
+        'temp_ip_mute' => 'Temporary IP-Mute',
+        'global_temp_ip_mute' => 'Global Temporary IP-Mute',
+
+        'kick' => 'Kick',
+        'global_kick' => 'Global Kick',
+        'warn' => 'Warn',
+    ],
 ];
