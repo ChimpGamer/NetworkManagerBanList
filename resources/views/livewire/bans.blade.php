@@ -54,7 +54,7 @@
                         <td>@if($ban->type->isIP())
                                 <span class="label label-danger">@lang('messages.punishment_types.ip_ban')</span>
                             @elseif($ban->type->isTemporary())
-                                <span class="label label-warning" x-data='{ tooltip: "{{ $ban->getExpires() }}"}' x-tooltip="tooltip">{{ $ban->getEndFormatted() }}</span>
+                                <span class="label label-warning" x-data x-tooltip.raw="{{ $ban->getExpires() }}">{{ $ban->getEndFormatted() }}</span>
                             @else
                                 <span class="label label-danger">@lang('messages.variable_permanent')</span>
                             @endif</td>
