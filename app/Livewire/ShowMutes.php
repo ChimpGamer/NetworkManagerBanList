@@ -19,6 +19,10 @@ class ShowMutes extends Component
     public string $search = '';
     public int $per_page = 10;
 
+    public function updated() {
+        $this->resetPage();
+    }
+
     public function showPunishment(Punishment $punishment)
     {
         $this->punishment = $punishment;
