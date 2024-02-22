@@ -65,12 +65,15 @@ server {
 
 ## Updating
 
-Usually just running `git pull` in the directory of the bans folder is sufficient. But sometimes there can be breaking changes which will require you do to a bit more than that.
+First enter the folder that contains the web files. Then run the following commands to update:
 ```shell
-composer update
+php artisan down
+git pull
+composer install --no-dev
 php artisan optimize:clear
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
+php artisan up
 ```
 After that it should be running just fine again.
