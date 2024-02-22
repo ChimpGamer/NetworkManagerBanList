@@ -19,7 +19,8 @@ class ShowWarns extends Component
     public string $search = '';
     public int $per_page = 10;
 
-    public function updated() {
+    public function updated()
+    {
         $this->resetPage();
     }
 
@@ -30,14 +31,21 @@ class ShowWarns extends Component
 
     public function render(): View
     {
+        $hideSilent = config('hide_silent_punishments');
+
         $warns = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')
             ->where('type', 19)
             ->where(function (Builder $query) {
                 $query->where('players.username', 'like', '%' . $this->search . '%')
                     ->orWhere('reason', 'like', '%' . $this->search . '%');
-            })
-            ->orderBy('id', 'DESC')->paginate($this->per_page);
+            });
+
+        if ($hideSilent) {
+            $warns = $warns->where('silent', false);
+        }
+
+        $warns = $warns->orderBy('id', 'DESC')->paginate($this->per_page);
         return view('livewire.warns')->with('warns', $warns);
     }
 }

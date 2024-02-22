@@ -30,14 +30,21 @@ class ShowKicks extends Component
 
     public function render(): View
     {
+        $hideSilent = config('hide_silent_punishments');
+
         $kicks = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')
             ->whereIn('type', [17, 18])
             ->where(function (Builder $query) {
                 $query->where('players.username', 'like', '%' . $this->search . '%')
                     ->orWhere('reason', 'like', '%' . $this->search . '%');
-            })
-            ->orderBy('id', 'DESC')->paginate($this->per_page);
+            });
+
+        if ($hideSilent) {
+            $kicks = $kicks->where('silent', false);
+        }
+
+        $kicks = $kicks->orderBy('id', 'DESC')->paginate($this->per_page);
         return view('livewire.kicks')->with('kicks', $kicks);
     }
 }

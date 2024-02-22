@@ -185,5 +185,6 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
-    'description' => env('APP_DESCRIPTION')
+    'description' => env('APP_DESCRIPTION'),
+    'hide_silent_punishments' => env('HIDE_SILENT_PUNISHMENTS', false),
 ];

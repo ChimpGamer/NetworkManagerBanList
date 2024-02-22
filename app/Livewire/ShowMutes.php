@@ -19,7 +19,8 @@ class ShowMutes extends Component
     public string $search = '';
     public int $per_page = 10;
 
-    public function updated() {
+    public function updated()
+    {
         $this->resetPage();
     }
 
@@ -30,14 +31,21 @@ class ShowMutes extends Component
 
     public function render(): View
     {
+        $hideSilent = config('hide_silent_punishments');
+
         $mutes = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')
             ->whereIn('type', [9, 10, 11, 12, 13, 14, 15, 16])
             ->where(function (Builder $query) {
                 $query->where('players.username', 'like', '%' . $this->search . '%')
                     ->orWhere('reason', 'like', '%' . $this->search . '%');
-            })
-            ->orderBy('id', 'DESC')->paginate($this->per_page);
+            });
+
+        if ($hideSilent) {
+            $mutes = $mutes->where('silent', false);
+        }
+
+        $mutes = $mutes->orderBy('id', 'DESC')->paginate($this->per_page);
         return view('livewire.mutes')->with('mutes', $mutes);
     }
 }

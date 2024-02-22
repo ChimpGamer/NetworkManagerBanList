@@ -30,14 +30,20 @@ class ShowBans extends Component
 
     public function render(): View
     {
+        $hideSilent = config('hide_silent_punishments');
+
         $bans = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')
             ->whereIn('type', [1, 2, 3, 4, 5, 6, 7, 8])
             ->where(function (Builder $query) {
                 $query->where('players.username', 'like', '%' . $this->search . '%')
                     ->orWhere('reason', 'like', '%' . $this->search . '%');
-            })
-            ->orderBy('id', 'DESC')->paginate($this->per_page);
+            });
+        if ($hideSilent) {
+            $bans = $bans->where('silent', false);
+        }
+
+        $bans = $bans->orderBy('id', 'DESC')->paginate($this->per_page);
         return view('livewire.bans')->with('bans', $bans);
     }
 }
