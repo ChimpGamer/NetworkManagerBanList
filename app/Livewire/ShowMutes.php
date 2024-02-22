@@ -31,7 +31,7 @@ class ShowMutes extends Component
 
     public function render(): View
     {
-        $hideSilent = config('hide_silent_punishments');
+        $hideSilent = config('app.hide_silent_punishments');
 
         $mutes = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')

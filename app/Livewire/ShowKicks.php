@@ -30,7 +30,7 @@ class ShowKicks extends Component
 
     public function render(): View
     {
-        $hideSilent = config('hide_silent_punishments');
+        $hideSilent = config('app.hide_silent_punishments');
 
         $kicks = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')

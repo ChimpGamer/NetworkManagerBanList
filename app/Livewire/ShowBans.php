@@ -30,7 +30,7 @@ class ShowBans extends Component
 
     public function render(): View
     {
-        $hideSilent = config('hide_silent_punishments');
+        $hideSilent = config('app.hide_silent_punishments');
 
         $bans = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')
