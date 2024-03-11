@@ -54,9 +54,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <div class="d-flex justify-content-center">
-                {{ $warns->links() }}
-            </div>
+            {{ $warns->links() }}
         </div>
     </div>
 </div>

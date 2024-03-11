@@ -62,9 +62,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <div class="d-flex justify-content-center">
-                {{ $mutes->links() }}
-            </div>
+            {{ $mutes->links() }}
         </div>
     </div>
 </div>

@@ -63,9 +63,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <div class="d-flex justify-content-center">
-                {{ $bans->links() }}
-            </div>
+            {{ $bans->links() }}
         </div>
     </div>
 </div>
