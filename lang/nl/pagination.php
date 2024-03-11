@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'previous' => '&laquo; Previous',
-    'next' => 'Next &raquo;',
-    'info' => 'Showing :start to :end of :total results'
+    'previous' => '&laquo; Vorige',
+    'next' => 'Volgende &raquo;',
+    'info' => 'Toont :start tot :end van :total resultaten'
 ];
