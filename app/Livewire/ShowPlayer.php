@@ -10,7 +10,7 @@ use Livewire\Component;
 class ShowPlayer extends Component
 {
     public Player $player;
-    public $punishmentsCount;
+    public int $punishmentsCount;
     public $bans;
     public $mutes;
     public $kicks;
@@ -18,12 +18,13 @@ class ShowPlayer extends Component
 
     public ?Punishment $punishment = null;
 
-    public function showPunishment(Punishment $punishment)
+    public function showPunishment(Punishment $punishment): void
     {
         $this->punishment = $punishment;
     }
 
-    public function mount() {
+    public function mount(): void
+    {
         $this->punishmentsCount = Punishment::where('uuid', $this->player->uuid)->count();
         $this->bans = Punishment::whereIn('type', [1, 2, 3, 4, 5, 6, 7, 8])
             ->where('uuid', $this->player->uuid)

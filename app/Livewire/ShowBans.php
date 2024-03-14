@@ -19,11 +19,12 @@ class ShowBans extends Component
     public string $search = '';
     public int $per_page = 10;
 
-    public function updated() {
+    public function updated(): void
+    {
         $this->resetPage();
     }
 
-    public function showPunishment(Punishment $punishment)
+    public function showPunishment(Punishment $punishment): void
     {
         $this->punishment = $punishment;
     }
