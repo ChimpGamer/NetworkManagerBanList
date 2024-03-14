@@ -1,6 +1,11 @@
 <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <!-- Container wrapper -->
     <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand">
+            <img src="{{ config('custom.navbar_logo_url', asset('images/full_logo.png')) }}" height="25" width="auto" alt="NetworkManager Logo" loading="lazy"/>
+        </a>
+
         <!-- Toggle button -->
         <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,12 +13,8 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- Brand -->
-            <a class="navbar-brand">
-                <img src="{{ config('custom.navbar_logo_url', asset('images/full_logo.png')) }}" height="25" width="auto" alt="NetworkManager Logo" loading="lazy"/>
-            </a>
 
-            <ul class="navbar-nav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link @if(Route::currentRouteName() == 'home') active @endif" aria-current="page"
                        href="/">@lang('messages.navbar_home')</a>
