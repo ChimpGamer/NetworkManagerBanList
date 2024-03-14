@@ -3,7 +3,8 @@
     <div class="container">
         <!-- Brand -->
         <a class="navbar-brand">
-            <img src="{{ config('custom.navbar_logo_url', asset('images/full_logo.png')) }}" height="25" width="auto" alt="NetworkManager Logo" loading="lazy"/>
+            <img src="{{ config('custom.navbar_logo_url', asset('images/full_logo.png')) }}" height="25" width="auto"
+                 alt="NetworkManager Logo" loading="lazy"/>
         </a>
 
         <!-- Toggle button -->
@@ -40,52 +41,53 @@
 
         <form id="searchbar-form" style="float: right !important;margin-left: auto;">
             <div class="position-relative">
-                <input type="text" placeholder="@lang('messages.placeholder_search_player')" id="searchbar" style="font-family: Roboto, 'FontAwesome'">
+                <input type="text" placeholder="@lang('messages.placeholder_search_player')" id="searchbar"
+                       style="font-family: Roboto, 'FontAwesome'">
             </div>
         </form>
     </div>
     <!-- Container wrapper -->
 </nav>
 
-@section('script')
-    <script>
-        $('#searchbar').easyAutocomplete({
-            url: function (data) {
-                if (data.length >= 3) {
-                    return '/player/search/' + data;
-                }
-                return null;
-            },
-            getValue: 'username',
-            requestDelay: 150,
-            template: {
-                type: "iconLeft",
-                fields: {
-                    iconSrc: "icon"
-                }
-            },
-            list: {
-                onClickEvent: function () {
-                    window.location.href = '/player/' + document.getElementById('searchbar').value;
-                },
-                match: {
-                    enabled: true
-                },
-                maxNumberOfElements: 6,
-                showAnimation: {
-                    type: "slide",
-                    time: 400
-                },
-                hideAnimation: {
-                    type: "slide",
-                    time: 400
-                }
+@script
+<script>
+    $('#searchbar').easyAutocomplete({
+        url: function (data) {
+            if (data.length >= 3) {
+                return '/player/search/' + data;
             }
-        });
+            return null;
+        },
+        getValue: 'username',
+        requestDelay: 150,
+        template: {
+            type: "iconLeft",
+            fields: {
+                iconSrc: "icon"
+            }
+        },
+        list: {
+            onClickEvent: function () {
+                window.location.href = '/player/' + document.getElementById('searchbar').value;
+            },
+            match: {
+                enabled: true
+            },
+            maxNumberOfElements: 6,
+            showAnimation: {
+                type: "slide",
+                time: 400
+            },
+            hideAnimation: {
+                type: "slide",
+                time: 400
+            }
+        }
+    });
 
-        $("#searchbar-form").submit(function (event) {
-            event.preventDefault();
-            window.location.href = '/player/' + document.getElementById('searchbar').value;
-        });
-    </script>
-@endsection
+    $("#searchbar-form").submit(function (event) {
+        event.preventDefault();
+        window.location.href = '/player/' + document.getElementById('searchbar').value;
+    });
+</script>
+@endscript
