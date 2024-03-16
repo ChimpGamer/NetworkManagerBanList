@@ -10,7 +10,7 @@
         <div class="dropdown-menu dropdown-menu-end w-100 @if(sizeof($players) > 0) show @endif">
             @foreach($players as $player)
                 <div class="px-3 py-2 border-bottom" style="cursor: pointer;"
-                     @click="window.location.href = '/player/{{$player->uuid}}'">
+                     @click="Livewire.navigate('/player/{{$player->uuid}}')">
                     <div class="d-inline-block">
                         <img src="https://minotar.net/helm/{{$player->uuid}}/20" alt="Avatar" loading="lazy">
                         <span>{{$player->username}}</span>

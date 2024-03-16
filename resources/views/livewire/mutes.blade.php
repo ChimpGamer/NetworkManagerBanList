@@ -44,7 +44,7 @@
                                       data-mdb-target="#showPunishmentModal"
                                       wire:click="showPunishment({{$mute->id}})">{{ $mute->id }}</a></td>
                         <td><img alt="player head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$mute->uuid}}/20"> <a href="/player/{{ $mute->uuid }}">{{ $mute->username }}</a>
+                                 src="https://minotar.net/avatar/{{$mute->uuid}}/20"> <a wire:navigate href="/player/{{ $mute->uuid }}">{{ $mute->username }}</a>
                         </td>
                         <td><img alt="punisher head" draggable="false"
                                  src="https://minotar.net/avatar/{{$mute->punisher}}/20"> {{ $mute->getPunisherName() }}
