@@ -1,5 +1,26 @@
 <p align="center"><img src="https://imgur.com/wUhBSGv.png" width="400" alt="NetworkManager Logo"></p>
 
+![home](https://i.imgur.com/nsN6ZhH.png)
+
+## Screenshots
+These are some screenshots of the web interface in both light and dark mode.
+
+### Light theme
+[Home page](https://i.imgur.com/nsN6ZhH.png) |
+[Bans page](https://i.imgur.com/RIL7KE4.png) |
+[Mutes page](https://i.imgur.com/3HUMX4U.png) |
+[Kicks page](https://i.imgur.com/2fWEQOG.png) |
+[Warns page](https://i.imgur.com/7S9ELVz.png) |
+[Player page](https://i.imgur.com/ppolBMf.png) |
+
+### Dark theme
+[Home page](https://i.imgur.com/Yz0k2EX.png) |
+[Bans page](https://i.imgur.com/DKsTPHy.png) |
+[Mutes page](https://i.imgur.com/Fg0BU39.png) |
+[Kicks page](https://i.imgur.com/iLfRTCW.png) |
+[Warns page](https://i.imgur.com/ISqvyEf.png) |
+[Player page](https://i.imgur.com/9o6ch8V.png) |
+
 ## Requirements
 1. PHP 8.1, 8.2 or 8.3
 2. Nginx, Apache or some other web server software that supports php. Nginx is the favorite here!
