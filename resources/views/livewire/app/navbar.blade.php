@@ -17,23 +17,23 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'home') active @endif" aria-current="page"
-                       href="/">@lang('messages.navbar_home')</a>
+                       href="{{ route('home') }}">@lang('messages.navbar_home')</a>
                 </li>
                 <li class="nav-item">
                     <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'bans') active @endif"
-                       href="/bans">@lang('messages.navbar_bans', ['total_bans' => $total_bans])</a>
+                       href="{{ route('bans') }}">@lang('messages.navbar_bans', ['total_bans' => $total_bans])</a>
                 </li>
                 <li class="nav-item">
                     <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'mutes') active @endif"
-                       href="/mutes">@lang('messages.navbar_mutes', ['total_mutes' => $total_mutes])</a>
+                       href="{{ route('mutes') }}">@lang('messages.navbar_mutes', ['total_mutes' => $total_mutes])</a>
                 </li>
                 <li class="nav-item">
                     <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'kicks') active @endif"
-                       href="/kicks">@lang('messages.navbar_kicks', ['total_kicks' => $total_kicks])</a>
+                       href="{{ route('kicks') }}">@lang('messages.navbar_kicks', ['total_kicks' => $total_kicks])</a>
                 </li>
                 <li class="nav-item">
                     <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'warns') active @endif"
-                       href="/warns">@lang('messages.navbar_warns', ['total_warns' => $total_warns])</a>
+                       href="{{ route('warns') }}">@lang('messages.navbar_warns', ['total_warns' => $total_warns])</a>
                 </li>
             </ul>
 
