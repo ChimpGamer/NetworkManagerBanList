@@ -23,57 +23,9 @@ body {
     padding: 4rem 2rem;
 }
 
-#searchbar {
-    display: inline-block;
-    vertical-align: middle;
-    width: 99%;
-}
-
-/* SearchBar Mobile Fix*/
-@media only screen and (max-device-width: 480px) {
-    #searchbar {
-        width: 85%;
-        padding: 11px 23px 1px 11px;
-    }
-
-    input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-input-placeholder {
-        outline: none;
-        color: var(--mdb-body-color) !important;
-        transition: all .25s ease;
-        margin: -10% auto 0;
-    }
-}
-
-input#searchbar {
-    color: var(--mdb-body-color) !important;
-    font-size: 18px;
-    border-radius: var(--mdb-border-radius);
-}
-
-input#searchbar::-webkit-input-placeholder {
-    color: lightgray;
-    transition: all .25s ease;
-    font-size: 18px;
-}
-
-input#searchbar:active, input#searchbar:focus, input#searchbar:focus::-webkit-input-placeholder {
-    outline: none;
-    color: var(--mdb-body-color) !important;
-    transition: all .25s ease;
-}
-
-[data-mdb-theme=dark] .easy-autocomplete-container ul {
-    background: none repeat scroll 0 0 var(--mdb-body-bg) !important;
-}
-
-[data-mdb-theme=dark] .easy-autocomplete-container ul li.selected {
-    background: none repeat scroll 0 0 #383838 !important;
-}
-
 .footer-text-shadow {
     text-shadow: 1px 1px black;
 }
-
 
 /* Fix weird table color when using dark theme */
 [data-mdb-theme=dark] .table {
