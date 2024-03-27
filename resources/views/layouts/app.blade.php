@@ -44,13 +44,14 @@
     @stack('styles')
 </head>
 
-<body style="background-image: url({{ config('custom.body_background_image_url', 'images/background.jpg') }});"
-      x-data="{show_backToTop: false}" @scroll.window="show_backToTop = window.scrollY > 30">
+<body style="background-image: url({{ config('custom.body_background_image_url', 'images/background.jpg') }});">
 
 <!-- Back to top button -->
-<div x-cloak x-show="show_backToTop">
+<div x-data="{show_backToTop: false}" @scroll.window="show_backToTop = window.scrollY > 30"
+    x-cloak x-show="show_backToTop">
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top"
-            x-data @click="window.scrollTo({top: 0, behavior: 'smooth'})">
+            x-transition
+            @click="window.scrollTo({top: 0, behavior: 'smooth'})">
         <i class="fas fa-arrow-up"></i>
     </button>
 </div>
