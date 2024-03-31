@@ -2,21 +2,24 @@
     @include('livewire.punishment-details-modal')
     <div class="card">
         <div class="card-header">
-            <h2 class="text-center">@lang('messages.title_mutes')</h2>
-
-            <div class="d-inline">
-                <label>@lang('messages.length_menu', ['menu' => '<select class="form-select" style="display: inherit; width: auto" wire:model.live="per_page">
+            <div class="row mt-2 justify-content-between text-center">
+                <div class="col-md-auto me-auto">
+                    <label>@lang('messages.length_menu', ['menu' => '<select class="form-select form-select-sm" style="display: inherit; width: auto" wire:model.live="per_page">
                         <option value=10>10</option>
                         <option value=25>25</option>
                         <option value=50>50</option>
                         <option value=100>100</option>
                    </select>'])
-                </label>
-            </div>
-            <div class="float-end d-inline" wire:ignore>
-                <div class="form-outline" data-mdb-input-init>
-                    <input type="search" id="punishmentSearch" class="form-control" wire:model.live="search"/>
-                    <label class="form-label" for="punishmentSearch" style="font-family: Roboto, 'FontAwesome'">@lang('messages.placeholder_search')</label>
+                    </label>
+                </div>
+                <div class="col-md-auto">
+                    <h4>@lang('messages.title_mutes')</h4>
+                </div>
+                <div class="col-md-auto ms-auto" wire:ignore>
+                    <div class="form-outline w-auto d-inline-block" data-mdb-input-init>
+                        <input type="search" id="punishmentSearch" class="form-control form-control-sm" wire:model.live="search"/>
+                        <label class="form-label" for="punishmentSearch" style="font-family: Roboto, 'FontAwesome'">@lang('messages.placeholder_search')</label>
+                    </div>
                 </div>
             </div>
         </div>
