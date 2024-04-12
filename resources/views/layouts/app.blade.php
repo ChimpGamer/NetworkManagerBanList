@@ -80,6 +80,5 @@
 
 <!-- Alpine Tooltip -->
 <script src="https://cdn.jsdelivr.net/npm/@ryangjchandler/alpine-tooltip@1.x.x/dist/cdn.min.js" defer></script>
-@yield('script')
 </body>
 </html>
