@@ -66,7 +66,7 @@
                                     @endif
                                 </span>
                             @elseif($punishment->type->isTemporary())
-                                <span class="label label-warning" x-data x-tooltip.raw="{{ $punishment->getExpires() }}">{{ $punishment->getEndFormatted() }}</span>
+                                <span class="label label-warning" x-data x-tooltip.placement.right-end.raw="{{ $punishment->getExpires() }}">{{ $punishment->getEndFormatted() }}</span>
                             @else
                                 <span class="label label-danger">@lang('messages.variable_permanent')</span>
                             @endif</p>
