@@ -15,26 +15,21 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'home') active @endif" aria-current="page"
-                       href="{{ route('home') }}">@lang('messages.navbar_home')</a>
-                </li>
-                <li class="nav-item">
-                    <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'bans') active @endif"
-                       href="{{ route('bans') }}">@lang('messages.navbar_bans', ['total_bans' => $total_bans])</a>
-                </li>
-                <li class="nav-item">
-                    <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'mutes') active @endif"
-                       href="{{ route('mutes') }}">@lang('messages.navbar_mutes', ['total_mutes' => $total_mutes])</a>
-                </li>
-                <li class="nav-item">
-                    <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'kicks') active @endif"
-                       href="{{ route('kicks') }}">@lang('messages.navbar_kicks', ['total_kicks' => $total_kicks])</a>
-                </li>
-                <li class="nav-item">
-                    <a wire:navigate class="nav-link @if(Route::currentRouteName() == 'warns') active @endif"
-                       href="{{ route('warns') }}">@lang('messages.navbar_warns', ['total_warns' => $total_warns])</a>
-                </li>
+                <x-nav-item :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                    @lang('messages.navbar_home')
+                </x-nav-item>
+                <x-nav-item :href="route('bans')" :active="request()->routeIs('bans')" wire:navigate>
+                    @lang('messages.navbar_bans', ['total_bans' => $total_bans])
+                </x-nav-item>
+                <x-nav-item :href="route('mutes')" :active="request()->routeIs('mutes')" wire:navigate>
+                    @lang('messages.navbar_mutes', ['total_mutes' => $total_mutes])
+                </x-nav-item>
+                <x-nav-item :href="route('kicks')" :active="request()->routeIs('kicks')" wire:navigate>
+                    @lang('messages.navbar_kicks', ['total_kicks' => $total_kicks])
+                </x-nav-item>
+                <x-nav-item :href="route('warns')" :active="request()->routeIs('warns')" wire:navigate>
+                    @lang('messages.navbar_warns', ['total_warns' => $total_warns])
+                </x-nav-item>
             </ul>
 
             @livewire('player-search-bar')
