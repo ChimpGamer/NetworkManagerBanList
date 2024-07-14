@@ -36,7 +36,7 @@
                 </thead>
 
                 <tbody>
-                @foreach($warns as $warn)
+                @forelse($warns as $warn)
                     <tr wire:loading.class="opacity-50">
                         <td>@if ($warn->active)
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
@@ -45,16 +45,16 @@
                             @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
                                       data-mdb-target="#showPunishmentModal"
                                       wire:click="showPunishment({{$warn->id}})">{{ $warn->id }}</a></td>
-                        <td><img alt="player head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$warn->uuid}}/20"> <a wire:navigate href="/player/{{ $warn->uuid }}">{{ $warn->username }}</a>
-                        </td>
-                        <td><img alt="punisher head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$warn->punisher}}/20"> {{ $warn->getPunisherName() }}
-                        </td>
+                        <td><x-player-link :uuid="$warn->uuid" :username="$warn->username"/></td>
+                        <td><x-player-link :uuid="$warn->punisher" :username="$warn->getPunisherName()"/></td>
                         <td>{{ $warn->time }}</td>
                         <td>{{ $warn->reason }}</td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="5" class="text-center">Sorry - No Data Found</td>
+                    </tr>
+                @endforelse
                 </tbody>
             </table>
             {{ $warns->links() }}

@@ -18,8 +18,10 @@
                 </div>
                 <div class="col-md-auto ms-auto" wire:ignore>
                     <div class="form-outline w-auto d-inline-block" data-mdb-input-init>
-                        <input type="search" id="punishmentSearch" class="form-control form-control-sm" wire:model.live="search"/>
-                        <label class="form-label" for="punishmentSearch" style="font-family: Roboto, 'FontAwesome'">@lang('messages.placeholder_search')</label>
+                        <input type="search" id="punishmentSearch" class="form-control form-control-sm"
+                               wire:model.live="search"/>
+                        <label class="form-label" for="punishmentSearch"
+                               style="font-family: Roboto, 'FontAwesome'">@lang('messages.placeholder_search')</label>
                     </div>
                 </div>
             </div>
@@ -38,7 +40,7 @@
                 </thead>
 
                 <tbody>
-                @foreach($bans as $ban)
+                @forelse($bans as $ban)
                     <tr wire:loading.class="opacity-50" wire:key="{{ $ban->id }}">
                         <td>@if ($ban->active)
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
@@ -47,23 +49,24 @@
                             @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
                                       data-mdb-target="#showPunishmentModal"
                                       wire:click="showPunishment({{$ban->id}})">{{ $ban->id }}</a></td>
-                        <td><img alt="player head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$ban->uuid}}/20"> <a wire:navigate href="/player/{{ $ban->uuid }}">{{ $ban->username }}</a>
-                        </td>
-                        <td><img alt="punisher head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$ban->punisher}}/20"> {{ $ban->getPunisherName() }}
-                        </td>
+                        <td><x-player-link :uuid="$ban->uuid" :username="$ban->username"/></td>
+                        <td><x-player-link :uuid="$ban->punisher" :username="$ban->getPunisherName()"/></td>
                         <td>{{ $ban->time }}</td>
                         <td>@if($ban->type->isIP())
                                 <span class="label label-danger">@lang('messages.punishment_types.ip_ban')</span>
                             @elseif($ban->type->isTemporary())
-                                <span class="label label-warning" x-data x-tooltip.raw="{{ $ban->getExpires() }}">{{ $ban->getEndFormatted() }}</span>
+                                <span class="label label-warning" x-data
+                                      x-tooltip.raw="{{ $ban->getExpires() }}">{{ $ban->getEndFormatted() }}</span>
                             @else
                                 <span class="label label-danger">@lang('messages.variable_permanent')</span>
                             @endif</td>
                         <td>{{ $ban->reason }}</td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="6" class="text-center">Sorry - No Data Found</td>
+                    </tr>
+                @endforelse
                 </tbody>
             </table>
             {{ $bans->links() }}

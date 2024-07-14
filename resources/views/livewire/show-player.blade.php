@@ -64,12 +64,8 @@
                                     @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
                                               data-mdb-target="#showPunishmentModal"
                                               wire:click="showPunishment({{$ban->id}})">{{ $ban->id }}</a></td>
-                                <td><img alt="player head" draggable="false"
-                                         src="https://minotar.net/avatar/{{$ban->uuid}}/20"> {{ $player->username }}
-                                </td>
-                                <td><img alt="punisher head" draggable="false"
-                                         src="https://minotar.net/avatar/{{$ban->punisher}}/20"> {{ $ban->getPunisherName() }}
-                                </td>
+                                <td><x-player-link :uuid="$ban->uuid" :username="$player->username"/></td>
+                                <td><x-player-link :uuid="$ban->punisher" :username="$ban->getPunisherName()"/></td>
                                 <td>{{ $ban->time }}</td>
                                 <td>@if($ban->type->isIP())
                                         <span class="label label-danger">@lang('messages.punishment_types.ip_ban')</span>
@@ -111,12 +107,8 @@
                                     @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
                                               data-mdb-target="#showPunishmentModal"
                                               wire:click="showPunishment({{$mute->id}})">{{ $mute->id }}</a></td>
-                                <td><img alt="player head" draggable="false"
-                                         src="https://minotar.net/avatar/{{$mute->uuid}}/20"> {{ $player->username }}
-                                </td>
-                                <td><img alt="punisher head" draggable="false"
-                                         src="https://minotar.net/avatar/{{$mute->punisher}}/20"> {{ $mute->getPunisherName() }}
-                                </td>
+                                <td><x-player-link :uuid="$mute->uuid" :username="$player->username"/></td>
+                                <td><x-player-link :uuid="$mute->punisher" :username="$mute->getPunisherName()"/></td>
                                 <td>{{ $mute->time }}</td>
                                 <td>@if($mute->type->isIP())
                                         <span class="label label-danger">@lang('messages.punishment_types.ip_mute')</span>
@@ -153,12 +145,8 @@
                                 <td><a href="#" data-mdb-ripple-init data-mdb-modal-init
                                        data-mdb-target="#showPunishmentModal"
                                        wire:click="showPunishment({{$kick->id}})">{{ $kick->id }}</a></td>
-                                <td><img alt="player head" draggable="false"
-                                         src="https://minotar.net/avatar/{{$kick->uuid}}/20"> {{ $player->username }}
-                                </td>
-                                <td><img alt="punisher head" draggable="false"
-                                         src="https://minotar.net/avatar/{{$kick->punisher}}/20"> {{ $kick->getPunisherName() }}
-                                </td>
+                                <td><x-player-link :uuid="$kick->uuid" :username="$player->username"/></td>
+                                <td><x-player-link :uuid="$kick->punisher" :username="$kick->getPunisherName()"/></td>
                                 <td>{{ $kick->time }}</td>
                                 <td>{{ $kick->reason }}</td>
                             </tr>
@@ -192,12 +180,8 @@
                                     @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
                                               data-mdb-target="#showPunishmentModal"
                                               wire:click="showPunishment({{$warn->id}})">{{ $warn->id }}</a></td>
-                                <td><img alt="player head" draggable="false"
-                                         src="https://minotar.net/avatar/{{$warn->uuid}}/20"> {{ $player->username }}
-                                </td>
-                                <td><img alt="punisher head" draggable="false"
-                                         src="https://minotar.net/avatar/{{$warn->punisher}}/20"> {{ $warn->getPunisherName() }}
-                                </td>
+                                <td><x-player-link :uuid="$warn->uuid" :username="$player->username"/></td>
+                                <td><x-player-link :uuid="$warn->punisher" :username="$warn->getPunisherName()"/></td>
                                 <td>{{ $warn->time }}</td>
                                 <td>{{ $warn->reason }}</td>
                             </tr>

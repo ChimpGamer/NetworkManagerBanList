@@ -37,7 +37,7 @@
                 </thead>
 
                 <tbody>
-                @foreach($mutes as $mute)
+                @forelse($mutes as $mute)
                     <tr wire:loading.class="opacity-50" wire:key="{{ $mute->id }}">
                         <td>@if ($mute->active)
                                 <i class="fas fa-exclamation-circle fa-lg text-danger"></i>
@@ -46,12 +46,8 @@
                             @endif <a href="#" data-mdb-ripple-init data-mdb-modal-init
                                       data-mdb-target="#showPunishmentModal"
                                       wire:click="showPunishment({{$mute->id}})">{{ $mute->id }}</a></td>
-                        <td><img alt="player head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$mute->uuid}}/20"> <a wire:navigate href="/player/{{ $mute->uuid }}">{{ $mute->username }}</a>
-                        </td>
-                        <td><img alt="punisher head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$mute->punisher}}/20"> {{ $mute->getPunisherName() }}
-                        </td>
+                        <td><x-player-link :uuid="$mute->uuid" :username="$mute->username"/></td>
+                        <td><x-player-link :uuid="$mute->punisher" :username="$mute->getPunisherName()"/></td>
                         <td>{{ $mute->time }}</td>
                         <td>@if($mute->type->isIP())
                                 <span class="label label-danger">@lang('messages.punishment_types.ip_mute')</span>
@@ -62,7 +58,11 @@
                             @endif</td>
                         <td>{{ $mute->reason }}</td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="6" class="text-center">Sorry - No Data Found</td>
+                    </tr>
+                @endforelse
                 </tbody>
             </table>
             {{ $mutes->links() }}

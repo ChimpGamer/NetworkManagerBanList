@@ -36,21 +36,21 @@
                 </thead>
 
                 <tbody>
-                @foreach($kicks as $kick)
+                @forelse($kicks as $kick)
                     <tr wire:loading.class="opacity-50">
                         <td><a href="#" data-mdb-ripple-init data-mdb-modal-init
                                data-mdb-target="#showPunishmentModal"
                                wire:click="showPunishment({{$kick->id}})">{{ $kick->id }}</a></td>
-                        <td><img alt="player head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$kick->uuid}}/20"> <a wire:navigate href="/player/{{ $kick->uuid }}">{{ $kick->username }}</a>
-                        </td>
-                        <td><img alt="punisher head" draggable="false"
-                                 src="https://minotar.net/avatar/{{$kick->punisher}}/20"> {{ $kick->getPunisherName() }}
-                        </td>
+                        <td><x-player-link :uuid="$kick->uuid" :username="$kick->username"/></td>
+                        <td><x-player-link :uuid="$kick->punisher" :username="$kick->getPunisherName()"/></td>
                         <td>{{ $kick->time }}</td>
                         <td>{{ $kick->reason }}</td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="5" class="text-center">Sorry - No Data Found</td>
+                    </tr>
+                @endforelse
                 </tbody>
             </table>
             {{ $kicks->links() }}

@@ -18,16 +18,11 @@
                     </div>
                     <div class="mb-3">
                         <strong>@lang('messages.variable_playername')</strong>
-                        <p><img alt="player head" draggable="false"
-                                src="https://minotar.net/avatar/{{$punishment->uuid}}/20"> <a wire:navigate
-                                href="/player/{{ $punishment->uuid }}">{{ $punishment->getPlayerName() }}</a></p>
+                        <p><x-player-link :uuid="$punishment->uuid" :username="$player->username"/></p>
                     </div>
                     <div class="mb-3">
                         <strong>@lang('messages.variable_punisher')</strong>
-                        <p><img alt="player head" draggable="false"
-                                src="https://minotar.net/avatar/{{$punishment->punisher}}/20"> <a wire:navigate
-                                href="/player/{{ $punishment->punisher }}">{{ $punishment->getPunisherName() }}</a>
-                        </p>
+                        <p><x-player-link :uuid="$punishment->punisher" :username="$player->getPunisherName()"/></p>
                     </div>
                     @if($punishment->server != null)
                         <div class="mb-3">
