@@ -18,11 +18,11 @@
                     </div>
                     <div class="mb-3">
                         <strong>@lang('messages.variable_playername')</strong>
-                        <p><x-player-link :uuid="$punishment->uuid" :username="$player->username"/></p>
+                        <p><x-player-link :uuid="$punishment->uuid" :username="$punishment->username"/></p>
                     </div>
                     <div class="mb-3">
                         <strong>@lang('messages.variable_punisher')</strong>
-                        <p><x-player-link :uuid="$punishment->punisher" :username="$player->getPunisherName()"/></p>
+                        <p><x-player-link :uuid="$punishment->punisher" :username="$punishment->getPunisherName()"/></p>
                     </div>
                     @if($punishment->server != null)
                         <div class="mb-3">
