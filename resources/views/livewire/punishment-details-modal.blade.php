@@ -18,7 +18,7 @@
                     </div>
                     <div class="mb-3">
                         <strong>@lang('messages.variable_playername')</strong>
-                        <p><x-player-link :uuid="$punishment->uuid" :username="$punishment->username"/></p>
+                        <p><x-player-link :uuid="$punishment->uuid" :username="$punishment->getPlayerName()"/></p>
                     </div>
                     <div class="mb-3">
                         <strong>@lang('messages.variable_punisher')</strong>
