@@ -22,7 +22,7 @@ These are some screenshots of the web interface in both light and dark mode.
 [Player page](https://i.imgur.com/9o6ch8V.png) |
 
 ## Requirements
-1. PHP 8.1, 8.2 or 8.3
+1. PHP 8.2 or 8.3
 2. Nginx, Apache or some other web server software that supports php. Nginx is the favorite here!
 3. Composer
 4. Git
