@@ -1,7 +1,8 @@
 <div id="player-search-bar" x-data="{ open: false }">
     <div class="form-outline" x-trap.noreturn="open" @click.outside="open = false"
          @keyup.escape.prevent.stop="open = false" data-mdb-input-init wire:ignore>
-        <input type="search" id="player-search" class="form-control me-2" @focus="open = true"
+        <input type="search" id="player-search" class="form-control me-2"
+               @focus="open = true" @keyup.enter="Livewire.navigate('/player/' + $el.value)"
                @keyup.escape.prevent="$el.blur()" wire:model.live.debounce.50ms="search" autocomplete="off"/>
         <label class="form-label" for="player-search"
                style="font-family: Roboto, 'FontAwesome'">@lang('messages.placeholder_search_player')</label>
