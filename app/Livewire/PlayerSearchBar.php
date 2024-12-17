@@ -15,7 +15,10 @@ class PlayerSearchBar extends Component
         $results = [];
 
         if (strlen($this->search) >= 3) {
-            $results = Player::select('uuid', 'username')->where('username', 'like', '%'.$this->search.'%')->limit(6)->get();
+            $results = Player::select('uuid', 'username')
+                ->where('username', $this->search)
+                ->orWhere('username', 'like', '%'.$this->search.'%')
+                ->limit(6)->get();
         }
 
         return view('livewire.player-search-bar')->with('players', $results);
