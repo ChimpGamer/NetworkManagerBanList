@@ -65,7 +65,7 @@
 <!--Main Navigation-->
 <div style="margin-top: 58px;">
     <div class="container my-5 p-2">
-        @yield('content')
+        {{ $slot }}
     </div>
 </div>
 

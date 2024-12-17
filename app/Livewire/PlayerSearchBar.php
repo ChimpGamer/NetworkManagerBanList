@@ -3,6 +3,9 @@
 namespace App\Livewire;
 
 use App\Models\Player;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Application;
 use Livewire\Component;
 
 class PlayerSearchBar extends Component
@@ -10,7 +13,7 @@ class PlayerSearchBar extends Component
 
     public string $search = '';
 
-    public function render()
+    public function render(): View|Factory|Application
     {
         $results = [];
 

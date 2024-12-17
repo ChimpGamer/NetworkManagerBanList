@@ -8,7 +8,7 @@ use Illuminate\View\View;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ShowKicks extends Component
+class Warns extends Component
 {
     use WithPagination;
 
@@ -33,19 +33,19 @@ class ShowKicks extends Component
     {
         $hideSilent = config('app.hide_silent_punishments');
 
-        $kicks = Punishment::join('players', 'punishments.uuid', 'players.uuid')
+        $warns = Punishment::join('players', 'punishments.uuid', 'players.uuid')
             ->select('punishments.*', 'players.username')
-            ->whereIn('type', [17, 18])
+            ->where('type', 19)
             ->where(function (Builder $query) {
                 $query->where('players.username', 'like', '%' . $this->search . '%')
                     ->orWhere('reason', 'like', '%' . $this->search . '%');
             });
 
         if ($hideSilent) {
-            $kicks = $kicks->where('silent', false);
+            $warns = $warns->where('silent', false);
         }
 
-        $kicks = $kicks->orderBy('id', 'DESC')->paginate($this->per_page);
-        return view('livewire.kicks')->with('kicks', $kicks);
+        $warns = $warns->orderBy('id', 'DESC')->paginate($this->per_page);
+        return view('livewire.warns')->with('warns', $warns);
     }
 }

@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\BansController;
-use App\Http\Controllers\KicksController;
-use App\Http\Controllers\MutesController;
-use App\Http\Controllers\WarnsController;
-use App\Http\Controllers\PlayerController;
+use App\Livewire\Bans;
+use App\Livewire\Home;
+use App\Livewire\Kicks;
+use App\Livewire\Mutes;
+use App\Livewire\ShowPlayer;
+use App\Livewire\Warns;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/bans', [BansController::class, 'index'])->name('bans');
-Route::get('/mutes', [MutesController::class, 'index'])->name('mutes');
-Route::get('/kicks', [KicksController::class, 'index'])->name('kicks');
-Route::get('/warns', [WarnsController::class, 'index'])->name('warns');
+Route::get('/', Home::class)->name('home');
+Route::get('/bans', Bans::class)->name('bans');
+Route::get('/mutes', Mutes::class)->name('mutes');
+Route::get('/kicks', Kicks::class)->name('kicks');
+Route::get('/warns', Warns::class)->name('warns');
 Route::view('/404', '404')->name('404');
 
-Route::get('/player/{id}', [PlayerController::class, 'show'])->name('player');
+Route::get('/player/{id}', ShowPlayer::class)->name('player');

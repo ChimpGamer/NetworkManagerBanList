@@ -1,5 +1,3 @@
-@extends('layouts.app')
-
 @push('styles')
     <style>
         @keyframes logo {
@@ -20,7 +18,7 @@
     </style>
 @endpush
 
-@section('content')
+<div>
     <div id="logo" class="text-center p-4">
         <img src="{{ config('custom.home_logo_url', asset('images/Logo.jpg')) }}" class="img-fluid" alt="Logo" height="auto" width="auto">
     </div>
@@ -30,4 +28,4 @@
             @lang('messages.homepage_text', ['total_punishments' => $total_punishments])
         </div>
     </div>
-@endsection
+</div>
