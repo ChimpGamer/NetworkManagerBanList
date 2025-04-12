@@ -6,6 +6,7 @@ use App\Models\Player;
 use App\Models\Punishment;
 use Illuminate\View\View;
 use Livewire\Component;
+use function Laravel\Prompts\error;
 
 class ShowPlayer extends Component
 {
@@ -45,6 +46,9 @@ class ShowPlayer extends Component
     }
 
     public function render(): View {
+        if(in_array($this->player->uuid, explode(',', config('custom.blocked_players')))) {
+            abort(404);
+        }
         return view('livewire.show-player')->with('player', $this->player);
     }
 }
