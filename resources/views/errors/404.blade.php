@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layouts.app>
     <section style="padding-top:4.5rem!important; padding-bottom:4.5rem!important">
         <div class="d-flex justify-content-center align-items-center"
              style="min-height: 50vh; max-width:1920px; padding-top:4.5rem!important; padding-bottom:4.5rem!important">
@@ -19,5 +17,4 @@
             </div>
         </div>
     </section>
-
-@endsection
+</x-layouts.app>
