@@ -30,6 +30,9 @@ class ShowPlayer extends Component
         $this->player = Player::findOr($id, function () use ($id) {
             return Player::where('username', '=', $id)->firstOrFail();
         });
+        if (in_array($this->player->uuid, explode(',', config('custom.blocked_players')))) {
+            abort(404);
+        }
         $this->punishmentsCount = Punishment::where('uuid', $this->player->uuid)->count();
         $this->bans = Punishment::whereIn('type', [1, 2, 3, 4, 5, 6, 7, 8])
             ->where('uuid', $this->player->uuid)
@@ -46,9 +49,6 @@ class ShowPlayer extends Component
     }
 
     public function render(): View {
-        if(in_array($this->player->uuid, explode(',', config('custom.blocked_players')))) {
-            abort(404);
-        }
         return view('livewire.show-player')->with('player', $this->player);
     }
 }
