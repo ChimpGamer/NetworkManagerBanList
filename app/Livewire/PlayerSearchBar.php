@@ -17,10 +17,12 @@ class PlayerSearchBar extends Component
     {
         $results = [];
 
+        $blockedPlayers = explode(',', config('custom.blocked_players'));
         if (strlen($this->search) >= 3) {
             $results = Player::select('uuid', 'username')
                 ->where('username', $this->search)
                 ->orWhere('username', 'like', '%'.$this->search.'%')
+                ->whereNotIn('uuid', $blockedPlayers)
                 ->limit(6)->get();
         }
 
