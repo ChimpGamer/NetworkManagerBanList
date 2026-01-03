@@ -19,9 +19,10 @@ class PlayerSearchBar extends Component
 
         $blockedPlayers = explode(',', config('custom.blocked_players'));
         if (strlen($this->search) >= 3) {
+            $escapedSearch = str_replace(['%', '_'], ['\%', '\_'], $this->search);
             $results = Player::select('uuid', 'username')
                 ->where('username', $this->search)
-                ->orWhere('username', 'like', '%'.$this->search.'%')
+                ->orWhere('username', 'like', '%'.$escapedSearch.'%')
                 ->whereNotIn('uuid', $blockedPlayers)
                 ->limit(6)->get();
         }
