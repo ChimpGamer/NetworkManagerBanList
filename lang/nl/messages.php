@@ -18,7 +18,7 @@ return [
     'title_warns' => 'Waarschuwingen',
     'title_player' => 'Speler :username',
 
-    'variable_playername' => 'Spelernaam',
+    'variable_playername' => 'Spelersnaam',
     'variable_punisher' => 'Stafflid',
     'variable_reason' => 'Reden',
 
