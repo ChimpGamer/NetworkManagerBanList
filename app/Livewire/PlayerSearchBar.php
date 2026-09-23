@@ -21,10 +21,13 @@ class PlayerSearchBar extends Component
         if (strlen($this->search) >= 3) {
             $escapedSearch = str_replace(['%', '_'], ['\%', '\_'], $this->search);
             $results = Player::select('uuid', 'username')
-                ->where('username', $this->search)
-                ->orWhere('username', 'like', '%'.$escapedSearch.'%')
+                ->where(function ($query) use ($escapedSearch) {
+                    $query->where('username', $this->search)
+                        ->orWhere('username', 'like', '%' . $escapedSearch . '%');
+                })
                 ->whereNotIn('uuid', $blockedPlayers)
-                ->limit(6)->get();
+                ->limit(6)
+                ->get();
         }
 
         return view('livewire.player-search-bar')->with('players', $results);
